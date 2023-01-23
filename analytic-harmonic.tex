@@ -1,16 +1,83 @@
 \section{Analytic and Harmonic Functions}
 \subsection{Boundary Values}
+\subsubsection{Weak* convergence of measures}
+\begin{theorem}
+    Let $\left\{ \varphi _{i} \right\}_{i}$ be an approximate identity on $\T$ and let $\mu \in \calM \left( \T \right)$. Then for all $i$, $\varphi_{i} * \mu  \in L^{1} \left( \T \right)$ with
+    \begin{equation*}
+	\norm{\varphi _{i} * \mu}_{1} \le C_{\varphi} \lVert \mu \rVert
+    \end{equation*}
+    and
+    \begin{equation*}
+	\norm{\mu} \le \sup_{i} \norm{\varphi_{i} * \mu}_{1}\text{.}
+    \end{equation*}
+    Moreover, the measures $d\mu_{i} = \left( \varphi_{i} * \mu \right) \left( e^{it} \right) dt/2\pi$ converge to $d\mu \left( e^{it} \right)$ in the weak* topology, i.e.
+    \begin{equation*}
+	\lim_{i} \frac{1}{2\pi} \int_{-\pi}^{\pi} f\left( e^{it} \right) \left( \varphi_{i} * \mu \right) \left( e^{it} \right) dt = \int_{\T} \varphi\left( e^{it} \right) d\mu \left( e^{it} \right)
+    \end{equation*}
+    for all $f \in \calC \left( \T \right)$.
+    \label{thm:weak-star-measures}
+\end{theorem}
+
+\subsubsection{Convergence in norm}
+\begin{theorem}
+    Let $\left\{ \varphi _{i} \right\}_{i}$ be an approximate identity on $\T$ and let $f \in L^{p} \left( \T \right)$ with $p \in [1, \infty)$. Then for all $i$, $\varphi_{i} * f  \in L^{p} \left( \T \right)$ with
+    \begin{equation*}
+	\norm{\varphi _{i} * f}_{p} \le C_{\varphi} \lVert f \rVert _{p}
+    \end{equation*}
+    and
+    \begin{equation*}
+	\lim_{i} \norm{\varphi_{i} * f -f}_{p} = 0 \text{.}
+	    \end{equation*} 
+    \label{thm:convergence-in-Lp}
+\end{theorem}
+
+
+\subsubsection{Weak* convergence of bounded functions}
+\begin{theorem}
+    Let $\left\{ \varphi _{i} \right\}_{i}$ be an approximate identity on $\T$ and let $f\in L^{\infty} \left( \T \right)$. Then for all $i$, $\varphi_{i} * \mu  \in \calC \left( \T \right)$ with
+    \begin{equation*}
+	\norm{\varphi _{i} * \mu}_{\infty} \le C_{\varphi} \lVert \mu \rVert _{\infty}
+    \end{equation*}
+    and
+    \begin{equation*}
+	\norm{f}_{+\infty} \le \sup_{i} \norm{\varphi_{i} * f}_{\infty}\text{.}
+    \end{equation*}
+    Moreover, $\varphi_{i} * f$ converge to $f$ in the weak* topology, i.e.
+    \begin{equation*}
+    \lim_{i} \int_{-\pi}^{\pi} g\left( e^{it} \right) \left( \varphi_{i} * f \right) \left( e^{it} \right) dt = \int_{\T} g\left( e^{it} \right) f \left( e^{it} \right) dt 
+    \end{equation*}
+    for all $g \in L^{1} \left( \T \right)$.
+    \label{thm:weak-star-infinity}
+\end{theorem}
+
+\subsubsection{The entire picture!}
+
 \begin{definition}[Poisson integral of some function or measure]
     Let $\tilde{f} : \D \to \C$ be a harmonic function. Then $\tilde{f}$ is said to be the \textit{Poisson integral} of the function $f : \T \to \C$ if
     \begin{equation*}
 	\tilde{f} (re^{i\theta}) = \frac{1}{2\pi} \int_{T} f\left( e^{it} \right) P_{r} \left( e^{i\left( \theta-t \right)} \right) dt
     \end{equation*}
+    In such a case, we will denote the function $\tilde{f}$ by $P[f]$.
     Similarly, $f$ is said to be the \textit{Poisson integral} of a complex measure $\mu$ on $T$ if
 \begin{equation*}
     \tilde{f} (re^{i\theta}) = \frac{1}{2\pi} \int_{T} P_{r} \left( e^{i\left( \theta-t \right)} \right) d\mu\left( e^{it} \right)
-    \end{equation*}
+    \end{equation*}In such a case, we will denote the function $\tilde{f}$ by $P[\mu]$.
     \label{def:Poisson-Integral-Of-Some-Function-Or-Measure}
 \end{definition}
+
+\begin{theorem}[Ultimate Convergence]
+    Let $f : \D \to \C$ be a harmonic function. Define for each $r\in [0,1)$, the function $f_{r} : \T \to \C$ by
+    \begin{equation*}
+	f_{r} \left( e^{i\theta} \right) = f\left( re^{i\theta} \right)
+    \end{equation*}
+    The following statements holds:
+    \begin{enumerate}
+	\item If $1 < p \le \infty$ then $f=P[g]$ for some $g \in L^{p} [g]$ iff for each $r > 0$, $\norm{f_{r}}_{p} < +\infty$ .
+	\item If p=1 then $f=P[g]$ for some $g \in L^{p} [g]$ iff $f_{r}$ converge in the $L^{1}$ norm.
+	\item $f=P[\mu]$ for some $\mu \in \calM (\T)$ iff for each $r > 0$, $\norm{f_{r}}_{1} < +\infty$ 
+    \end{enumerate}
+    \label{thm:convergence-Poisson}
+\end{theorem}
 \subsection{Fatou's Theorem}
 
 \begin{theorem}
@@ -27,4 +94,94 @@
     \label{thm:Fatou-1906}
 \end{theorem}
 
+\begin{corollary}
+    Let $\mu$ be a complex measure on $\T$. Then $P[\mu]$ has nontangential limits equal everywhere to the Radon Nikodym derivative of $\mu$ with respect to the normalised Lebesgue measure.
+\end{corollary}
 
+\begin{corollary}
+    Let $f : \T \to \C$ be $L^{1}$. Then $P[f]$ has nontangential limits at almost everywhere and these limits equal to $f$ almost everywhere.
+    \label{cor:L1-implies-Poisson-limits}
+\end{corollary}
+
+\begin{corollary}
+    Let $f: \D \to \C$ be a harmonic function and $1\le p <\infty$. Suppose that for all $0\le r < 1$, we have that
+    \begin{equation*}
+	\norm{f_{r}}_{p} < +\infty
+    \end{equation*}
+    Then for almost every $\theta$ the radial limits 
+    \begin{equation*}
+	\tilde {f} (e^{i\theta} ) = \lim_{r\to 1} f\left( re^{i\theta} \right)
+    \end{equation*}
+    exist and define a function $\tilde f$ in $L^{p} \left( \T \right)$. The following also holds:
+    \begin{enumerate}
+	\item If $p>1$ then $f=P[\tilde{f}]$.
+	\item If $p=1$ then $f=P[\mu]$ for some complex measure $\mu$ whose absolutely continuous part is $fd\theta$.
+	\item IF $f$ is bounded then the boundary values exist almost everywhere and define a bounded measurable function $\tilde{f}$ on $\T$ such that $f=P[\tilde{f}]$.
+    \end{enumerate}
+    \label{cor:imp-Fatou}
+\end{corollary}
+\begin{proof}
+    Suppose that for each $r\in [0,1)$, we have $\norm{f_{r}}_{p} < +\infty$. We need to prove that for almost every $\theta$, $\lim_{r\to 1} f\left( re^{i\theta} \right)$ exists. Then by Theorem \ref{thm:convergence-Poisson}, we have that $f=P[g]$ for some $g\in L^{p} \left( \T \right)$. Since $L^{p} \left( \T \right) \subset L^{1} \left( \T \right)$, we can use the previous corollary. By the previous corollary, we have that $P[g]$ has nontangential limits almost everywhere, we have that
+    \begin{equation}
+	\tilde{f} \left( e^{i\theta} \right) = \lim_{r\to 1} f(re^{i\theta}) = \lim_{r\to 1} P[g] \left( re^{i\theta} \right)
+	\label{eqn:radial-limits}
+    \end{equation}
+    exists almost everywhere.
+
+    Now we proceed to prove part $(1)$. Also by Theorem \ref{thm:convergence-Poisson}, we have that $f=P[g]$ for some $g\in L^{p} \left( \T \right)$. Hence, we have that by Equation \ref{eqn:radial-limits} that $\tilde{f} (e^{i\theta}) =  \lim_{r\to 1} P[g] \left( re^{i\theta} \right)$ holds at almost every $\theta$.
+
+    Also, by the previous corollary, $\lim_{r\to 1} P[g] \left( re^{i\theta} \right) = g(e^{i\theta})$ for almost every $\theta$. Hence, we have that $\tilde{f} = g$.
+
+\end{proof}
+
+\begin{corollary}
+    Let $f: \D \to \R_{\ge 0}$ be a harmonic function. Then $f$ has nontangential limits at almost every point of $\T$. \textcolor{red}{(Why demand nonnegative?)}
+    \label{cor:nontangential-limits}
+\end{corollary}
+
+Let $h \left( \D \right)$ denote the set of all harmonic functions on $\D$. Let $p\in [1,\infty]$. Define
+\begin{equation*}
+    h^{p} \left( \D \right) = \left\{ f\in h \left( \D \right) \, \mid \, \left\{ f_{r} \right\}_{0\le r < 1} \text{ is uniformly bounded in } L^{p} \text{ norm }\right\}
+\end{equation*}
+We define a norm on $h^{p} \left( \D \right)$ by
+\begin{equation*}
+    \norm{f} = \sup_{0\le r < 1} \norm{f_{r}}_{p} =\begin{cases} \sup_{0\le r < 1} \left( \frac{1}{2\pi} \int_{-\pi}^{\pi} \abs{f\left( re^{i\theta}\right)}^{p}d\theta   \right)^{\frac{1}{p}} & \text{if } p \in [1, \infty) \\
+	\sup_{0\le r < 1} \norm{f(re^{i\theta})}_{\infty}
+    \end{cases}
+\end{equation*}
+
+It is easy to see why $\norm{f} < +\infty$ for any $f\in h^{p} \left( D \right)$. So we now proceed to show that $h^{p} \left( D \right)$ is a Banach space with this norm. First we show that it is indeed a normed linear space.
+
+Clearly, $h \left( \D \right)$ is a vector space. To show that $h^{p} \left( \D \right)$ is a vector space, it suffices to check that $h^{p} \left( \D \right)$ is a subspace.
+
+Let $f,g \in h^{p} \left( \D \right)$ and let $\alpha \in \C$. Then for any $r\in [0,1)$, we have that 
+\begin{align*}
+    \norm{(f+\alpha g)_{r}}_{p} &= \norm{f_{r} + \alpha g_{r}} \\
+    &= \norm{f_{r}}_{p} + \alpha \norm{g_{r}}_{p}
+\end{align*}
+Take note of the use of Holder's inequality. After this is done, since $\left\{ f_{r} \right\}_{r\in [0,1)}$ and $\left\{ g_{r} \right\}_{r\in [0,1)}$ is uniformly bounded, we have that $\left\{ f+ \alpha g \right\}_{r\in [0,1)}$ is uniformly bounded in $L^{p}$ norm.
+
+Now, we need to show that it is a normed linear space but this follows almost immediately.
+
+To show that it is a Banach space, we show that
+
+\begin{theorem}
+    Let $p\in [1, \infty]$. If $u\in L^{p} \left( \T \right)$ then $f=P * u \in h^{p} \left( \D \right)$ and $\norm{f}_{p} =\norm{u}_{p}$. If $\mu \in \calM \left( \T \right)$ then $f= P * \mu \in h^{1} \left( \D \right)$ and $\norm{f}_{1} = \norm{\mu}$.
+    \label{thm:lp-and-hp}
+\end{theorem}
+\begin{proof}
+    We consider the case $p \in [1, \infty )$. The other cases can be dealt similarly. Consider the map 
+    \begin{equation*}
+	u \stackrel{T}{\mapsto} U
+    \end{equation*}
+    where $U\left( re^{i\theta} \right) = \frac{1}{2\pi} \int_{-\pi}^{\pi} P_{r}\left( e^{i(\theta-t)} \right) u \left( e^{it} \right) dt$. By Theorem \ref{thm:convergence-in-Lp}, we have that $\norm{U} = \norm{u}_{p} < +\infty$. Hence $U \in h^{p} \left( \D \right)$.
+
+    Linearity is obvious. We need to check injectivity and surjectivity.
+
+    To check injectivity, let $u \in L^{p} \left( \T \right)$ and suppose that $T(u)=P[u]=0$. Now $\lim_{r\to 1} P[u] \left( re^{i\theta} \right) = u$ for almost $\theta$ by Corollary \ref{cor:L1-implies-Poisson-limits} and hence $u=0$ almost everywhere.
+
+    Surjectivity is clear from Theorem \ref{thm:convergence-Poisson}.
+    \end{proof}
+
+
+\subsection{\texorpdfstring{$H^p$}{\text{Hp}} spaces}
