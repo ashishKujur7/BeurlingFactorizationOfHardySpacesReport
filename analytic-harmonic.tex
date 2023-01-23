@@ -1,0 +1,30 @@
+\section{Analytic and Harmonic Functions}
+\subsection{Boundary Values}
+\begin{definition}[Poisson integral of some function or measure]
+    Let $\tilde{f} : \D \to \C$ be a harmonic function. Then $f$ is said to be the \textit{Poisson integral} of the function $f : \T \to \C$ if
+    \begin{equation*}
+	\tilde{f} (re^{i\theta}) = \frac{1}{2\pi} \int_{T} f\left( e^{it} \right) P_{r} \left( e^{i\left( \theta-t \right)} \right) dt
+    \end{equation*}
+    Similarly, $f$ is said to be the \textit{Poisson integral} of a complex measure $\mu$ on $T$ if
+\begin{equation*}
+    \tilde{f} (re^{i\theta}) = \frac{1}{2\pi} \int_{T} P_{r} \left( e^{i\left( \theta-t \right)} \right) d\mu\left( e^{it} \right)
+    \end{equation*}
+    \label{def:Poisson-Integral-Of-Some-Function-Or-Measure}
+\end{definition}
+\subsection{Fatou's Theorem}
+
+\begin{theorem}
+    Let $\mu$ be a complex measure on the unit circle $\T$, and let $f: \D \to \C$ be the harmonic function defined by
+    \begin{align*}
+	f(re^{i\theta}) = \frac{1}{2\pi} \int_{\T} P_{r} \left( e^{i\left( \theta-t \right)} \right) d\mu \left( e^{it} \right)
+    \end{align*}
+
+    Let $e^{i\theta_{0}}$ be any point where $\mu$ is differentiable with respect to the normalised Lebesgue measure. Then
+    \begin{equation*}
+	\lim_{r\to 1} f\left( re^{i\theta_{0}} \right) = \left( \frac{d\mu}{d\theta} \right) \left( e^{i\theta _{0}} \right) = \mu ' \left( e^{i\theta _{0}} \right)
+    \end{equation*}
+    In fact, $f(re^{i\theta}) \to \mu ' \left( e^{i\theta_{0}} \right)$ as $re^{i\theta}$ approaches $e^{i\theta_{0}}$ along any path in the open disc within the region of the form $\abs{\theta - \theta_{0}} \le c \left( 1-r \right)$ for some $c> 0$. 
+    \label{thm:Fatou-1906}
+\end{theorem}
+
+
