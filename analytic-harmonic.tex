@@ -1,4 +1,13 @@
 \section{Analytic and Harmonic Functions}
+\subsection{The Cauchy and Poisson Kernels}
+\begin{proposition}
+    Let $u: \overline{\D} \to \C$ be a harmonic function. Then we have that
+    \begin{equation}
+	u\left( re^{i\theta} \right) = \frac{1}{2\pi} \int_{-\pi}^{\pi} u\left( e^{it} \right) P_{r} \left( e^{i\left( \theta -t \right)} \right) dt
+    \end{equation}
+    \label{prop:poisson-integral-formula-for-harmonic-function}
+\end{proposition}
+
 \subsection{Boundary Values}
 \subsubsection{Weak* convergence of measures}
 \begin{theorem}
@@ -145,8 +154,8 @@ Let $h \left( \D \right)$ denote the set of all harmonic functions on $\D$. Let 
 \end{equation*}
 We define a norm on $h^{p} \left( \D \right)$ by
 \begin{equation*}
-    \norm{f} = \sup_{0\le r < 1} \norm{f_{r}}_{p} =\begin{cases} \sup_{0\le r < 1} \left( \frac{1}{2\pi} \int_{-\pi}^{\pi} \abs{f\left( re^{i\theta}\right)}^{p}d\theta   \right)^{\frac{1}{p}} & \text{if } p \in [1, \infty) \\
-	\sup_{0\le r < 1} \norm{f(re^{i\theta})}_{\infty}
+    \norm{f}_{h^{p} \left( \D \right)} = \sup_{0\le r < 1} \norm{f_{r}}_{L^p \left( \D \right)} =\begin{cases} \sup_{0\le r < 1} \left( \frac{1}{2\pi} \int_{-\pi}^{\pi} \abs{f\left( re^{i\theta}\right)}^{p}d\theta   \right)^{\frac{1}{p}} & \text{if } p \in [1, \infty) \\
+	\sup_{0\le r < 1} \norm{f(re^{i\theta})}_{L^{\infty} \left( \D \right)} & \text{ if } p=\infty
     \end{cases}
 \end{equation*}
 
@@ -183,8 +192,9 @@ To show that it is a Banach space, we show that
     Surjectivity is clear from Theorem \ref{thm:convergence-Poisson}.
     \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{\texorpdfstring{$H^p$}{\text{Hp}} spaces}
+\subsection{Hardy Spaces -- \texorpdfstring{$H^p$}{\text{Hp}} spaces}
 
 Let us denote the set of all analytic functions on $\D$ by $H \left( \D \right)$. Hence, $H \left( \D \right) \subset h \left( \D \right)$. For $p\in (0,\infty]$, we consider the \textit{Hardy classes} of analytic functions on the unit disc
 
@@ -198,3 +208,36 @@ Clearly,
 \end{align*}
 
 We will see that $H ^{p} \left( \D \right)$, $1\le p \le +\infty$, is also a Banach spaces isomorphic to a closed subspace of $L^{p} \left( \T \right)$ denotes by $H^{p} \left( \T \right)$.
+
+To prove that $H^{p} \left( \D \right)$ is a closed subspace of $h^{p} \left( \D \right)$, we are going to identify $H^{p} \left( \D \right)$ with the closed subspace
+\begin{align*}
+    \left\{ u\in L^{p} \left( \T \right) : \int_{-\pi}^{\pi} u\left( e^{it} \right) e^{ikt} = 0 \textit{ for all } k \in \N \right\}
+\end{align*}
+
+Let $\left\{ u_{n} \right\}$ be a sequence of functions in the above subspace; suppose that $\left\{ u_{n} \right\}$ converge to $u\in L^{p} \left( \T \right)$. Now, let $k\in \N$ be arbitrary. Since $\left\{ u_{n} \right\}$ converge to $u$ in $p$-norm, we have that $\left\{ u_{n} \right\}$ converge to $u$ in $1$-norm. Hence we have the following:
+\begin{align*}
+    \abs{\int_{-\pi}^{\pi} u_{n} \left( e^{it} \right) e^{ikt} dt - \int_{-\pi}^{\pi} u \left( e^{it} \right) e^{ikt} dt } &\le \int_{-\pi}^{\pi} \abs{u_{n} \left( e^{it} \right) - u\left( e^{it} \right)} dt
+\end{align*}
+From the above inequality, it is evident that $u$ is in the subspace mentioned above!
+
+\subsubsection{Series Representation of Harmonic Functions}
+
+\begin{theorem}
+    Let $U$ be a harmonic on the disc $D_{R} = \left\{ |z| < R \right\}$. Then, for each $n\in \Z$, the quantity
+    \begin{equation}
+	a_{n} = \frac{\rho^{-\abs{n}}}{2\pi} \int_{-\pi}^{\pi} U\left( \rho e^{it} \right) e^{-int} dt \qquad \left( 0 < \rho < R \right)
+	\label{eqn:srhf-1}
+    \end{equation}
+    is independent of $\rho$ and we have
+    \begin{equation}
+	U\left( re^{i\theta} \right) = \sum_{n=-\infty}^{\infty} a_{n} r^{\abs{n}} e^{in\theta} \qquad \left( re^{i\theta} \in \D \right)
+	\label{eqn:srhf-2}
+    \end{equation}
+    The function
+    \begin{equation}
+	V\left( re^{i\theta} \right) = \sum_{n=-\infty}^{\infty} -i \text{sgn } (n) a_{n} r^{\abs{n}} e^{in\theta} \qquad \left( re^{i\theta} \in \D \right)
+	\label{eqn:srhf-3}
+    \end{equation}
+    is the unique harmonic conjugate of $U$ such that $V\left( 0 \right)  = 0$. The series in \ref{eqn:srhf-2} and \ref{eqn:srhf-3} are absolutely and uniformly convergent on compact subsets of $D_{R}$
+    \label{thm:srhf}
+\end{theorem}

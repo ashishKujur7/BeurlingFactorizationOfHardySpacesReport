@@ -1,0 +1,113 @@
+\section{The space \texorpdfstring{$H^1$}{\text{H1}}}
+\horz
+
+\subsection{Brief Recap!}
+\begin{theorem}
+    Let $u : \overline{\D} \to \C$ be a harmonic function. Then we have that
+    \begin{equation*}
+	u\left( re^{i\theta} \right) = \frac{1}{2\pi} \int_{-\pi}^{\pi} u\left( e^{it} \right) P_{r} \left( e^{i\left( \theta-t \right)} \right)
+    \end{equation*}
+    \label{thm:Poisson-Integral-Formula}
+\end{theorem}
+
+\subsection{The Helson-Lowdenslager Approach}
+Let $\calC \left( \overline {\D} \right)$ be the set of all continuous functions on $\overline{\D}$ and let $H\left( \D \right)$ be the set of all holomorphic functions on the open disc $\D$. We define $\calA =\calC \left( \overline{ \D } \right) \cap H \left( \D \right)$.
+
+We show that $\calA$ is an uniformly closed algebra of $\calC \left( \overline{ \D } \right)$. Let $\left\{ f_{n} \right\}$ be a sequence in $\calA$ converging uniformly to $f\in \calC \left( \overline \D \right)$.
+
+We recall Morera's Theorem for analytic functions at this point:
+\begin{theorem}[Morera]
+    A continuous, complex valued function $f : D \to \C$ that satisfies $\oint _{\gamma} f \left( z \right) dz = 0$ for any closed piecewise $C^{1}$ path $\gamma$ in $D$ must be holomorphic on $D$.
+    \label{thm:morera-analytic}
+\end{theorem}
+
+We use this theorem to prove what we want to prove. Now, let $C$ be any closed curve in $\D$. Then for any $n\in \mathbb N$,
+\begin{align*}
+\oint_{C}f_{n}  \left( z \right) dz = 0
+\end{align*}
+So, 
+\begin{align*}
+    \oint_{C} f(z) dz = \oint_{C} \lim_{n\to \infty} f_{n} \left( z \right) dz = \lim_{n\to \infty} \oint_{C} f_{n} \left( z \right) dz =0
+\end{align*}
+Since $C$ was arbitrary, $f$ must be holomorphic. This shows that $\calA$ is uniformly closed. The fact that it is an algebra is easy to check $\checkmark$.
+
+Now, note that since $\D$ is a compact metric space, we have that $\calC \left( \D \right)$ is a complete metric space with supremum metric. Since the supremum metric can also be induced by a norm, namely the supremum norm, we have that $\calC\left( \D \right)$ is a Banach space with the supremum  norm.
+
+Thus, this is what we have proved so far:
+
+\begin{theorem}
+    The disc algebra $\calA =\calC \left( \overline{ \D } \right) \cap H \left( \D \right)$ is a Banach space under the $\sup$ norm
+    \begin{align*}
+	\norm{f}_{\infty} = \sup_{\abs{z}\le 1} \abs{f\left( z \right)}
+    \end{align*}
+    \label{thm:disc-algebra-is-B-space}
+\end{theorem}
+
+We make a couple of observations at this point:
+\begin{enumerate}
+    \item Each $f\in \mathcal A$ is the Poisson integral of its boundary values:
+\begin{align*}
+    f\left( re^{i\theta} \right) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f\left( e^{it} \right) P_{r} \left( e^{i \left( \theta -t \right)} \right) dt
+\end{align*}
+\item It follows from the Maximum Modulus Theorem that 
+    \begin{align*}
+	\norm{f}_{\infty} = \sup \abs{f\left( e^{it} \right)}
+    \end{align*}
+\end{enumerate}
+
+\begin{theorem}[Correspondence of $\calA$ with a closed subspace of $\calC \left( \T \right)$]
+    Consider the subspace
+    \begin{align*}
+	\tilde{\calA} = \left\{ f\in \calC \left( \T \right) \, : \, \int_{-\pi}^{\pi} f\left( e^{it} \right) e^{in\theta}  \text{ for } n=1,2,\ldots \right\}
+    \end{align*}
+    of $\calC \left( \T \right)$. Then there is an isomorphism of $\calA$ with $\tilde{\calA}$.
+    \label{thm:correspondence-of-disc-algebra}
+\end{theorem}
+\begin{proof}
+    First, we show that $\tilde{\calA}$ is a closed subspace of $\calC \left( \T \right)$. Let $\left\{ f_{n} \right\}$ be a sequence of functions in $\tilde{\calA}$ converging to $f\in \calC \left( \T \right)$. Consider the following:
+    \begin{align*}
+	\abs{\int_{-\pi}^{\pi} f\left( e^{it} \right) e^{ikt} dt} &= \abs{\int_{-\pi}^{\pi} f\left( e^{it} \right) e^{ikt} dt - \int_{-\pi}^{\pi} f_n\left( e^{it} \right) e^{ikt} dt}  \\
+	&= \int_{-\pi}^{\pi} \abs{f \left( e^{it} \right) -f_{n} \left( e^{it} \right)} dt \\
+	& \le 2\pi \norm{f_{n} - f}_{\infty} \to 0 \text{ as } n\to \infty
+    \end{align*}
+    This shows that $\tilde{\calA}$ is closed under $\calC \left( \T \right)$ with supremum norm.
+
+    Now consider the linear map $T: \calA \to \tilde{\calA}$ given by
+    \begin{align*}
+	f \stackrel{T}{\longmapsto} f\mid_{\T}
+    \end{align*}
+    For the sake of convenience, we will write $f\mid_{\T}$ as $f_{\T}$.
+    We first need to show this map is well defined! That is, we need to show that
+    \begin{equation*}
+	\int_{-\pi}^{\pi} f_{\T} \left( e^{it} \right) e^{ikt} dt = 0	
+    \end{equation*}
+    for all $k\in \N$ but this immediately follows from Cauchy's theorem.
+
+    Note that injectivity is clear from Theorem \ref{thm:Poisson-Integral-Formula}. To show surjectivity, let $f\in \tilde{A}$. We need to show that there is a function $u \in \calA$ such that $u_{\T} = f$. Consider the function
+    \begin{equation*}
+	u\left( re^{i\theta} \right) =
+	\begin{cases}
+	    (P*f) (re^{i\theta}) & \text{ if } 0\le r <1 \\ 
+	    f\left( e^{i\theta} \right) & \text{ if } r=1
+	\end{cases}
+    \end{equation*}
+    This is the Dirichlet problem on the unit disc! So, $u$ is continuous on $\overline {\D}$. It remains to show that $u$ is analytic on $\D$. But note that for $r\in [0,1)$,
+    \begin{align*}
+    u\left( re^{i\theta} \right) &= \sum_{n=-\infty}^{\infty} r^{\abs{n}} \hat{f}\left( n \right) e^{int} \\
+&= \sum_{n=0}^{\infty} r^{\abs{n}} \hat{f}\left( n \right) e^{int} 
+    \end{align*}
+    This completes the proof of the theorem!
+\end{proof}
+
+In view of the previous theorem, we will simply write $\tilde{\calA}$ as $\calA$.
+
+
+\horz 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{theorem}[F and M. Riesz]
+    
+    \label{thm:f-m-riesz}
+\end{theorem}
+
+\subsection{Szegö's Theorem}
