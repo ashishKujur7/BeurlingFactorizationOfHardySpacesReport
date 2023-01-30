@@ -101,6 +101,97 @@ We make a couple of observations at this point:
 
 In view of the previous theorem, we will simply write $\tilde{\calA}$ as $\calA$.
 
+\begin{definition}
+    A trignometric polynomial $p$ on the circle $\T$ is of the form
+    \begin{equation*}
+	p\left( e^{it} \right) = \sum_{k=0}^{n} a_{k} e^{ik\theta}
+    \end{equation*}
+    \label{def:trignometric-polynomial}
+\end{definition}
+
+\begin{proposition}
+    The set of the trignometric polynomials is a dense subset of $\calA$.
+    \label{prop:disc-algebra-separable}
+\end{proposition}
+\begin{proof}
+    It is clear that any trignometric polynomial on the circle is a member of the disc algebra. Now, if $f: \T \to \C$ is in $\calA$, then its negative Fourier coefficients are zero! Since, the Cesaro sum of $f$ 
+    \begin{equation*}
+	s_{n} \left( x \right) = \sum_{k=-n}^{k=n} \hat{f} (n) e^{ikx} = \sum_{k=0}^{n} \hat{f} (n) e^{ikx}
+    \end{equation*}
+    converge to $f$ uniformly and is a sequence of trignometric polynomial, we are done!
+\end{proof}
+
+The following result is used in the proof of the next theorem, so, we prove it here:
+
+\begin{theorem}
+    The real parts of functions in $\calA$ are uniformly dense in $\calC \left( \T , \R \right)$. In other words, if $\mu$ is finite signed Borel measure on $\T$ such that $\int f \, d\mu =0$ for every $f\in \calA$ then $\mu$ is the zero measure.
+    \label{thm:kinda-Fejer}
+\end{theorem}
+\begin{proof}
+    We first show that any trignometric polynomial of the form
+    \begin{equation}
+	p\left( e^{it} \right) = \sum_{k=-n}^{n} c_{k} e^{ikt}
+	\label{eqn:trig-poly-1}
+    \end{equation}
+    where $c_{-k} = \overline{c_{k}}$ for each $k\in \left\{ 1,\ldots , n \right\}$ is a real part of a function $f\in \calA$. Note that $p\left( e^{it} \right)$ in Equation \ref{eqn:trig-poly-1} is the real part of the function:
+    \begin{equation*}
+	f\left( e^{it} \right) = c_{0} + 2c_{1} e^{it} + 2c_{2} e^{2it} + \ldots + 2 c_{n} e^{int}
+    \end{equation*}
+
+    
+    Now, we claim that every function $f \in C\left( \T , \R \right)$ is a uniform limit of a trignometric polynomial of the form \ref{eqn:trig-poly-1}. We will be done if we show that the negative Fourier coefficients of real valued function is the conjugate of the its positive counterpart, that is, for each $n\in \Z_{\ge 0}$, we have that $\hat{f}\left( -n \right) = \overline{\hat{f} \left( n \right)}$. To show this, take any $n\in \Z _{\ge 0}$ and then observe that
+    \begin{align*}
+	\hat{f} \left( -n \right) &= \int_{\T} f\left( e^{it} \right) e^{int} \frac{dt}{2\pi} \\
+	&= \overline{\int_{\T} f\left( e^{it} \right) e^{-int} \frac{dt}{2\pi}} \\
+&= \overline{\hat{f} \left( n \right)}
+    \end{align*}
+
+This shows that the Cesaro means of a real valued function is a trignometric polynomial of the form \ref{eqn:trig-poly-1} and since the Cesaro means converges to $f$ uniformly. Thus, the closure of the real parts of $\calA$ is indeed $\calC \left( \T , \R \right)$.
+
+Now, let $\mu$ be a finite signed measure on $\T$ such that $\int f \, d\mu =0$ for every $f \in \calA$. We show that $\mu$ is the zero measure. Notice that if $f\in \calA$ then
+\begin{equation*}
+    0=\int_{\T} f \, d\mu = \int_{\T} \Re (f) \, d\mu + i\int_{\T} \Im (f) \, d\mu
+\end{equation*}
+Hence, it follows that 
+\begin{equation*}
+    \int_{\T} \Re (f) \, d\mu = 0
+\end{equation*}
+for every $f\in \calA$.
+Now, if $g\in \calC \left( \T, \R \right)$ then by the first part of this theorem, there is a sequence $\left\{ f_{n} \right\} \in \calA$ such that $\Re \left( f_{n} \right) $ converges to $g$ uniformly. By the Dominated Convergence Theorem (which holds, thanks to Jordan Decomposition Theorem), we have that $\int_{\T} g \, d\mu = 0$. 
+
+Now to prove that every $\mu = 0$, it suffices to show that $\hat{\mu} \left( n \right) = 0$ for every $n\in \Z$\footnote{See Page 41, Corollary 2.3 of Mashreghi.}. Now, notice that for any $n\in \Z$, we have
+\begin{align*}
+    \hat{\mu} (n) &= \int_{\T} e^{-int} d\mu \left( e^{it} \right) \\
+    &=  \int_{\T} \left(\cos \left( nt \right) - i \sin \left( nt \right) \right) d\mu \left( e^{it} \right) \\
+    &= \int_{\T} \cos \left( nt \right) d\mu \left( e^{it} \right) - i\int_{\T} \sin \left( nt \right) d\mu \left( e^{it} \right) \\
+    &= 0
+\end{align*}
+This completes the proof!
+\end{proof}
+
+\begin{corollary}
+    Let $\mu$ be a finite signed  measure on $\T$ such that $\int f d\mu = 0$ for every $f\in \calA$ which vanishes at the origin then $\mu$ is a constant multiple of Lebesgue measure.
+    \label{cor:constant-multiple-of-Lebesgue}
+\end{corollary}
+\begin{proof}
+    We first prove the following claim: If $f \in \calA$ then $\int_{\T} f d\mu = \frac{f\left( 0 \right)}{2\pi}$. Since the negative Fourier cofficients are zero and $f$ is continuous, we have that the Cesaro means converge uniformly to $f$, that is,
+    \begin{align*}
+	\sum_{k=0}^{\infty} \hat{f} \left( n \right) e^{int} \rightarrow f \text{ uniformly}
+    \end{align*}
+    Thus,
+\begin{align*}
+    \int_{T} f\left( e^{it} \right) \frac{dt}{2\pi} &= \frac{1}{2\pi} \int_{\T}  \left(  \sum_{k=0}^{\infty}\hat{f} \left( n \right) e^{int} \right) dt\\
+    &= \frac{1}{2\pi} \sum_{k=0}^{\infty} \int_{\T} \left( \hat{f} \left( n \right) e^{int} dt \right) \\
+    &= \frac{f(0)}{2\pi}
+    \end{align*}
+
+    Now, we proceed to the proof. We define a measure $d\nu = d\mu - \frac{1}{2\pi} \mu \left( \T \right) dt$. Now, we have that
+    \begin{align*}
+	\int_{\T} f\left( e^{it} \right) d\nu \left( e^{it} \right) &= \int_{\T}[f-f\left( 0 \right)] \left( e^{it} \right) d\mu \left( e^{it} \right) + f\left( 0 \right) \int_{\T} d\nu \left( e^{it} \right) \\
+	&= 0
+    \end{align*}
+    Hence, we have that $d\mu = \frac{1}{2\pi} \mu \left( \T \right) dt$.
+\end{proof}
 
 \horz 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
