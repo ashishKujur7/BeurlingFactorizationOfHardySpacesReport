@@ -1,7 +1,6 @@
-\section{The space \texorpdfstring{$H^1$}{\text{H1}}}
-\horz
+\chapter{The space \texorpdfstring{$H^1$}{\text{H1}}}
 
-\subsection{Brief Recap!}
+\section{Brief Recap!}
 \begin{theorem}
     Let $u : \overline{\D} \to \C$ be a harmonic function. Then we have that
     \begin{equation*}
@@ -10,7 +9,7 @@
     \label{thm:Poisson-Integral-Formula}
 \end{theorem}
 
-\subsection{The Helson-Lowdenslager Approach}
+\section{The Helson-Lowdenslager Approach}
 Let $\calC \left( \overline {\D} \right)$ be the set of all continuous functions on $\overline{\D}$ and let $H\left( \D \right)$ be the set of all holomorphic functions on the open disc $\D$. We define $\calA =\calC \left( \overline{ \D } \right) \cap H \left( \D \right)$.
 
 We show that $\calA$ is an uniformly closed algebra of $\calC \left( \overline{ \D } \right)$. Let $\left\{ f_{n} \right\}$ be a sequence in $\calA$ converging uniformly to $f\in \calC \left( \overline \D \right)$.
@@ -58,9 +57,9 @@ We make a couple of observations at this point:
 \begin{theorem}[Correspondence of $\calA$ with a closed subspace of $\calC \left( \T \right)$]
     Consider the subspace
     \begin{align*}
-	\tilde{\calA} = \left\{ f\in \calC \left( \T \right) \, : \, \int_{-\pi}^{\pi} f\left( e^{it} \right) e^{in\theta}  \text{ for } n=1,2,\ldots \right\}
+	\tilde{\calA} = \left\{ f\in \calC \left( \T \right) \, : \, \int_{-\pi}^{\pi} f\left( e^{it} \right) e^{int}=0  \text{ for } n=1,2,\ldots \right\}
     \end{align*}
-    of $\calC \left( \T \right)$. Then there is an isomorphism of $\calA$ with $\tilde{\calA}$.
+    of $\calC \left( \T \right)$. Then there is an isometric isomorphism of $\calA$ with $\tilde{\calA}$.
     \label{thm:correspondence-of-disc-algebra}
 \end{theorem}
 \begin{proof}
@@ -102,7 +101,7 @@ We make a couple of observations at this point:
 In view of the previous theorem, we will simply write $\tilde{\calA}$ as $\calA$.
 
 \begin{definition}
-    A trignometric polynomial $p$ on the circle $\T$ is of the form
+    An analytic trignometric polynomial $p$ on the circle $\T$ is of the form
     \begin{equation*}
 	p\left( e^{it} \right) = \sum_{k=0}^{n} a_{k} e^{ik\theta}
     \end{equation*}
@@ -182,7 +181,7 @@ This completes the proof!
 \begin{align*}
     \int_{T} f\left( e^{it} \right) \frac{dt}{2\pi} &= \frac{1}{2\pi} \int_{\T}  \left(  \sum_{k=0}^{\infty}\hat{f} \left( n \right) e^{int} \right) dt\\
     &= \frac{1}{2\pi} \sum_{k=0}^{\infty} \int_{\T} \left( \hat{f} \left( n \right) e^{int} dt \right) \\
-    &= \frac{f(0)}{2\pi}
+    &= \frac{\hat{f}(0)}{2\pi} 
     \end{align*}
 
     Now, we proceed to the proof. We define a measure $d\nu = d\mu - \frac{1}{2\pi} \mu \left( \T \right) dt$. Now, we have that
@@ -193,6 +192,31 @@ This completes the proof!
     Hence, we have that $d\mu = \frac{1}{2\pi} \mu \left( \T \right) dt$.
 \end{proof}
 
+We will be working entirely on the $\T$. So, $\calA$ and $H^{2}$ will be the spaces on the unit circle rather on the open unit disc. 
+
+Now, consider $\calA$ as a subset of $L^{2} \left( \T , \scrB \left( \T \right) , \mu \right)$ where $\mu$ is any finite positive measure. Let $\calA _{0} = \left\{ f \in \calA : \int_{\T} f\left( e^{it} \right) \frac{dt}{2\pi} = \frac{\hat{f} (0)}{2\pi}=0 \right\}$. It is easily seen that $\calA _{0}$ is a subspace of $L^{2} \left( d\mu \right)$. Therefore, we have the closed subspace spanned by $\calA$ is $\llbracket \calA_{0} \rrbracket = \overline{ \operatorname{span} (\calA_{0}) } = \overline{\calA_{0}}$. By a theorem of Hilbert spaces, we have that there is some vector $F \in \llbracket \calA _{0} \rrbracket$ such that
+\begin{equation*}
+    \inf_{f\in \llbracket \calA _{0} \rrbracket} \int \abs{1-f^{2}} d\mu = \int \abs{1-F^{2}} d\mu
+\end{equation*}
+
+But since $d\left( 1, \llbracket \calA_{0}\rrbracket \right) = d \left( 1, \overline \calA_{0} \right) \stackrel{\footnote{this is true for any set in a metric space}}{=} d \left( 1, \calA_{0} \right)$, we have
+
+\begin{equation*}
+    \inf_{f\in \calA _{0}} \int \abs{1-f^{2}} d\mu = \int \abs{1-F^{2}} d\mu
+\end{equation*}
+
+Note that this $F$ is the orthogonal projection of $1$ into the closed subspace spanned by $\calA_{0}$.
+
+\begin{theorem}
+    Let $\mu$ be a finite positive Borel measure on $\T$ and suppose that the constant function $1$ is not in $\llbracket \calA_{0} \rrbracket$. Then let $f=P_{\llbracket \calA_{0} \rrbracket} \left( 1 \right)$. Then the following holds:
+    \begin{enumerate}
+	\item The measure $d\nu = \abs{1-F^{2}} d\mu$ is a nonzero constant multiple of the Lebesgue measure. In particular, Lebesgue measure is absolutely continuous with respect to $\mu$.
+	\item The function $\left( 1-F \right)^{-1} \in H^{2}$.
+	\item If $h= \left( \frac{d\mu}{d\theta} \right)$ then $\left( 1-F \right)h \in L^{2} = L^{2} \left( \frac{d\theta}{2\pi} \right)$.
+    \end{enumerate}
+    \label{thm:}
+\end{theorem}
+
 \horz 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -201,4 +225,4 @@ This completes the proof!
     \label{thm:f-m-riesz}
 \end{theorem}
 
-\subsection{Szegö's Theorem}
+\section{Szegö's Theorem}

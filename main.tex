@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{report}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsfonts, amsmath}
 \usepackage[T1]{fontenc}
@@ -12,9 +12,9 @@
 \usepackage{color}
 \usepackage{hyperref}
 \usepackage{csquotes}
-%\usepackage{fourier}
 \usepackage{tikz-cd}
 \usepackage{lipsum}
+\usepackage{stmaryrd}
 
 \newtheorem{theorem}{Theorem}[subsection]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -38,7 +38,7 @@
 \newcommand{\ignore}[1]{}
 
 % section symbol
-\renewcommand{\thesection}{\S\arabic{section}}
+%\renewcommand{\thesection}{\S\arabic{section}}
 
 % \renewcommand{\Pr}{{\bf Pr}}
 % \newcommand{\Prx}{\mathop{\bf Pr\/}}
@@ -222,13 +222,19 @@
 \newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
 \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
 
-\title{Banach Spaces of Analytic Functions}
+\title{
+{Study of Closed Ideals of Disc Algebra}\\
+{\large Indian Institute of Science Education and Research -- Thiruvananthapuram}\vspace{1cm}
+{\includegraphics[height=0.1\textheight]{iiser_logo.png}}
+}
 \author{Ashish Kujur}
 \date{Last Updated: \today}
+
 
 \begin{document}
 
 \maketitle \tableofcontents
+
 \include{analytic-harmonic.tex}
 \include{h1.tex}
 \end{document}
