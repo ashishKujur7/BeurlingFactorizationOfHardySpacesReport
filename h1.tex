@@ -217,6 +217,22 @@ Note that this $F$ is the orthogonal projection of $1$ into the closed subspace 
     \label{thm:}
 \end{theorem}
 
+\begin{proof}
+    Let $S=\llbracket \calA _{0} \rrbracket$. We begin to prove part one of the theorem. Let $F= P_{S} \left( 1 \right)$. Then we have by the uniqueness of the decomposition that
+    \begin{equation*}
+	1=\underbrace{F}_{P_S (1)} + \underbrace{1-F}_{P_{S^{\perp} (1)}}
+    \end{equation*}
+
+    Thus, we have that $\left( 1-F \right)$ is orthogonal to every element in $S$ and hence, in particular, any element in $\calA _{0}$. We claim that $1-F$ is orthogonal to $\left( 1-F \right) f $ for every $f\in \calA _{0}$\footnote{How do we know that $(1-F)f \in L^{2} (d\mu)$}.  To prove this, note that we showed that $S=\overline{\calA_{0}}$ in the paragraph before the statement of this theoremand since $F \in S$, there is a sequence $\left\{ f_{n} \right\} \in \calA _{0}$ converging to $F$. Hence, we have that $\left\{ f\left( 1-f_{n} \right) \right\}$ is a sequence in $\calA _{0}$ converges to $f\left( 1-F \right)$ in the $L^{2}$-norm. Hence, we have that
+    \begin{align*}
+	\ip{f(1-F), (1-F)} &= \ip{\lim_{n\to \infty} f\left( 1-f_{n} \right), \left( 1-F \right)} \\
+	&= \lim_{n\to \infty} \ip{f\left( 1-f_{n} \right), \left( 1-F \right)} \\
+	&\stackrel{?}{=} 0  
+    \end{align*}
+     
+    \horz
+\end{proof}
+
 \horz 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

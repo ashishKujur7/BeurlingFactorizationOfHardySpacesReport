@@ -1,5 +1,5 @@
-\documentclass[12pt]{report}
-\usepackage[margin=1in]{geometry}
+\documentclass[12pt,twoside]{report}
+\usepackage[headheight=15pt]{geometry}
 \usepackage{amsfonts, amsmath}
 \usepackage[T1]{fontenc}
 \usepackage{mathrsfs, enumitem}
@@ -222,9 +222,23 @@
 \newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
 \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
 
+\usepackage{fancyhdr}
+
+\fancypagestyle{myheader}{
+    \fancyhead{} %clear all headers
+    \fancyfoot{} %clear all footers
+    \fancyhead[CO]{\textsc{\leftmark}} %How to insert the Chapter names like "MyChapter"?
+    \fancyfoot[C]{\thepage}
+    \fancyhead[CE]{\textsc{Ashish Kujur}}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \renewcommand{\footrulewidth}{0.0pt}
+}
+\pagestyle{myheader}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter:\ #1}{}}
+
 \title{
 {Study of Closed Ideals of Disc Algebra}\\
-{\large Indian Institute of Science Education and Research -- Thiruvananthapuram}\vspace{1cm}
+{\large Indian Institute of Science Education and Research -- Thiruvananthapuram}\\ \vspace{1cm}
 {\includegraphics[height=0.1\textheight]{iiser_logo.png}}
 }
 \author{Ashish Kujur}
@@ -232,9 +246,7 @@
 
 
 \begin{document}
-
 \maketitle \tableofcontents
-
 \include{analytic-harmonic.tex}
 \include{h1.tex}
 \end{document}
