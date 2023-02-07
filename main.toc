@@ -11,4 +11,4 @@
 \contentsline {chapter}{\numberline {2}The space $H^1$}{10}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Brief Recap!}{10}{section.2.1}%
 \contentsline {section}{\numberline {2.2}The Helson-Lowdenslager Approach}{10}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Szegö's Theorem}{17}{section.2.3}%
+\contentsline {section}{\numberline {2.3}Szegö's Theorem}{18}{section.2.3}%

@@ -218,27 +218,75 @@ Note that this $F$ is the orthogonal projection of $1$ into the closed subspace 
 \end{theorem}
 
 \begin{proof}
-    Let $S=\llbracket \calA _{0} \rrbracket$. We begin to prove part one of the theorem. Let $F= P_{S} \left( 1 \right)$. Then we have by the uniqueness of the decomposition that
+    \begin{enumerate}
+	\item Let $S=\llbracket \calA _{0} \rrbracket$. We begin to prove part one of the theorem. Let $F= P_{S} \left( 1 \right)$. Then we have by the uniqueness of the decomposition that
     \begin{equation*}
 	1=\underbrace{F}_{P_S (1)} + \underbrace{1-F}_{P_{S^{\perp} (1)}}
     \end{equation*}
 
-    Thus, we have that $\left( 1-F \right)$ is orthogonal to every element in $S$ and hence, in particular, any element in $\calA _{0}$. We claim that $1-F$ is orthogonal to $\left( 1-F \right) f $ for every $f\in \calA _{0}$\footnote{How do we know that $(1-F)f \in L^{2} (d\mu)$}.  To prove this, note that we showed that $S=\overline{\calA_{0}}$ in the paragraph before the statement of this theoremand since $F \in S$, there is a sequence $\left\{ f_{n} \right\} \in \calA _{0}$ converging to $F$. Hence, we have that $\left\{ f\left( 1-f_{n} \right) \right\}$ is a sequence in $\calA _{0}$ converges to $f\left( 1-F \right)$ in the $L^{2}$-norm. Hence, we have that
+    Thus, we have that $\left( 1-F \right)$ is orthogonal to every element in $S$ and hence, in particular, any element in $\calA _{0}$ (because $\calA_{0} \subset S \leadsto S^{\perp} \subset \calA_{0} ^{\perp}$). We claim that $1-F$ is orthogonal to $\left( 1-F \right) f $ for every $f\in \calA _{0}$.  But before, we do this, we need to show that $(1-F)f \in L^{2} (d\mu)$. Observe that\begin{align*}
+	\int_{\T} \abs{(1-F)f^{2}} d\mu \le \norm{f}_{\infty}^{2} \norm{1-F}_{2}^{2} < \infty
+    \end{align*}
+
+    To prove this, note that we showed that $S=\overline{\calA_{0}}$ in the paragraph before the statement of this theoremand since $F \in S$, there is a sequence $\left\{ f_{n} \right\} \in \calA _{0}$ converging to $F$. Hence, we have that $\left\{ f\left( 1-f_{n} \right) \right\}$ is a sequence in $\calA _{0}$\footnote{$\calA_{0}$ is an algebra!} converges to $f\left( 1-F \right)$ in the $L^{2}$-norm. Hence, we have that
+
     \begin{align*}
 	\ip{f(1-F), (1-F)} &= \ip{\lim_{n\to \infty} f\left( 1-f_{n} \right), \left( 1-F \right)} \\
-	&= \lim_{n\to \infty} \ip{f\left( 1-f_{n} \right), \left( 1-F \right)} \\
-	&\stackrel{?}{=} 0  
+	&= \lim_{n\to \infty} \ip{f\left( 1-f_{n} \right), \left( 1-F \right)} &\text{continuity of the inner product} \\
+	&= 0  & \text{$1-F$ is orthogonal to $\calA_{0}$}
     \end{align*}
      
-    \horz
+    Now, let $d\nu = \abs{1-F}^{2} d\mu$. We have shown that for any $f\in \calA_{0}$, 
+    \begin{align*}
+	\int_{\T} f d\nu &= \int_{\T} f \abs{1-F}^{2} d\mu = \ip{f(1-F), (1-F)} = 0
+    \end{align*}
+    Hence, by Corollary \ref{cor:constant-multiple-of-Lebesgue}, we have that $d\mu = k\, d\lambda$ for some $k \ge 0$.
+
+    Now, we claim that this $k\ne 0$. If $k=0$ then we would have that 
+    \begin{equation*}
+	\int_{\T} d\nu = 0 \leadsto \int_{\T} \abs{1-F}^{2} d\mu = 0
+    \end{equation*}
+    Hence, we have that $F=1$ $\mu$-almost everywhere\footnote{See Corollary 2.3.12 of Cohn's Measure Theory.}. But then we have that $1\in S$ which contradicts our assumption. Hence $k \ne 0$.
+\item Observe that part 1 of the theorem tells us that 
+    \begin{equation*}
+	\abs{1-F}^{2} d\mu = k\, d\lambda \text{ where } k \ne 0
+    \end{equation*}
+    Then we have that by Lebesgue Decomposition Theorem
+    \begin{align*}
+	d\mu = h d\lambda + d\mu_{s}
+    \end{align*}
+    for some positive $\calL^{1}$-function $h$ and some singular measure $\mu_{s}$.
+    Hence, we have that
+    \begin{align}
+	\abs{1-F}^{2} d\mu &= \abs{1-F}^{2} \left( h d\lambda + d\mu_{s} \right) \\
+	&= \underbrace{\abs{1-F}^{2} h d\lambda}_{(1)} + \underbrace{\abs{1-F}^{2} d\mu_{s}}_{(2)}
+	\label{eqn:decomposed-measure}
+    \end{align}
+    By the uniqueness of the Lebesgue Decomposition Theorem (one needs to verify that the measures obtained in (1) and (2) are absolutely continuous and singular), we have that
+\begin{align*}
+    \abs{1-F}^{2} h &= k \text{ $\lambda$-almost everywhere.} \\
+    \leadsto \frac{1}{\abs{1-F}^{2}} &= \frac{h}{k} \text{ $\lambda$-almost everywhere.}
+\end{align*}
+This tells us that $(1-F)^{-1} \in L^{2} \left( d\lambda \right)$ where $\lambda$ is the Lebesgue measure on $\T$. Also, note that $F=1$ $d\mu_{s}$-almost everwhere. Hence, we have that 
+\begin{equation}
+    \abs{1-F}^{2} d\mu = \abs{1-F}^{2} h d\lambda = k d\lambda \leadsto d\mu = \abs{1-F}^{-2} k d\lambda
+    \label{eqn:prelude-to-f-m}
+    \end{equation}
+
+    Now, we proceed to show that the negative Fourier coefficients of $\left( 1-F \right)^{-1}$ is 0 then we would have shown that $\left( 1-F \right)^{-1} \in H^{2}$. Consider the following for $f\in \calA_{0}$:
+\begin{align*}
+    k \int_{\T} \left( 1-F \right)^{-1} f d\lambda &= k \int_{\T} \left( 1-\overline F \right) f \abs{1-F}^{-2} d\lambda \\
+    &= k \int_{\T} \left( 1-\overline F \right) f d\mu \\
+    &= 0
+\end{align*}
+The last line follows from the fact that $1-F \perp f$ for any $f\in \calA_{0}$. Hence this holds for any $e^{in\theta}$ and hence we are done.
+
+\item Note that the derivative of $\mu$ with respect to normalized Lebesgue meaures is $h$ as demonstrated in Equation \ref{eqn:decomposed-measure}. Now, Equation \ref{eqn:prelude-to-f-m} shows that 
+    \begin{align*}
+	\abs{1-F}h = k\abs{1-F}^{-1} \text{ $\lambda$-almost everywhere.}
+    \end{align*}
+    Since $\abs{ 1-F}^{-1} \in L^{2} \left( \lambda \right)$, so is $(1-F)h$.
+    \end{enumerate}
 \end{proof}
-
-\horz 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{theorem}[F and M. Riesz]
-    
-    \label{thm:f-m-riesz}
-\end{theorem}
 
 \section{Szegö's Theorem}
