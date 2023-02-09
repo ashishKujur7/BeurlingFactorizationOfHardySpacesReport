@@ -214,7 +214,7 @@ Note that this $F$ is the orthogonal projection of $1$ into the closed subspace 
 	\item The function $\left( 1-F \right)^{-1} \in H^{2}$.
 	\item If $h= \left( \frac{d\mu}{d\theta} \right)$ then $\left( 1-F \right)h \in L^{2} = L^{2} \left( \frac{d\theta}{2\pi} \right)$.
     \end{enumerate}
-    \label{thm:}
+    \label{thm:prelude-to-fm-riesz}
 \end{theorem}
 
 \begin{proof}
@@ -289,4 +289,135 @@ The last line follows from the fact that $1-F \perp f$ for any $f\in \calA_{0}$.
     \end{enumerate}
 \end{proof}
 
+
+
+
+\begin{corollary}
+    Let $\mu$ be a finite positive measure on $\T$ with absolutely continuous part $\mu_{a}$, then
+    \begin{align*}
+	\inf_{f\in \calA_{0}} \int_{\T} \abs{1-f}^{2} d\mu = \inf_{f\in \calA_{0}} \int_{\T} \abs{1-f}^{2}  d\mu_{a}
+    \end{align*}
+    where $\mu_{a}$ is the absolutely continuous part of $\mu$.
+    In particular, for any singular measure $\mu$, the function $1$ is in the $L^{2} \left( d\mu \right)$ closure of $\calA_{0}$.
+\end{corollary}
+\begin{proof}
+    Let $F$ be the orthogonal projection of $1$ into the closed subspace spanned by $\calA_{0}$. Then we have that 
+    \begin{align*}
+	\inf_{f\in \calA_{0}} \int_{\T} \abs{1-f}^{2} d\mu = \norm{1-F}^{2} = \int_{\T} \abs{1-F}^2 d\mu
+    \end{align*}
+    From Equation \ref{eqn:prelude-to-f-m}, we see that
+    \begin{equation*}
+	\abs{1-F}^{2} d\mu = \abs{1-F}^{2} h d\lambda = \abs{1-F}^{2} d\mu_{a}
+    \end{equation*}
+    where $h$ is the Radon Nikodym derivative of $\mu$.
+    Integrating both sides, we have that
+\begin{align*}
+	\inf_{f\in \calA_{0}} \int_{\T} \abs{1-f}^{2} d\mu = \inf_{f\in \calA_{0}} \int_{\T} \abs{1-f}^{2}  d\mu_{a}
+    \end{align*}
+    which is what we wanted to prove.
+    Now if $\mu$ is a singular measure then we have that the absolutely continuous part of $\mu$ is the zero measure and hence we have that
+\begin{align*}
+	\inf_{f\in \calA_{0}} \int_{\T} \abs{1-f}^{2} d\mu = \norm{1-F}^{2} = 0   
+    \end{align*}
+
+    From the fact that $\norm{1-F}=0$, we conclude that $1=F$ almost everywhere and hence $1$ is in the closed subspace spanned by $\calA_{0}$ which is in fact $\overline {\calA_{0}}$. This completes the proof of the Corollary.
+\end{proof}
+
+\begin{corollary}
+    Let $\mu$ be a finite complex Borel measure on $\T$ which is orthogonal to $\calA_{0}$, that is, $\int_{\T} f d\mu =0$ for all $f\in \calA_{0}$. Then the absolutely continuous part and singular parts of $\mu$ are separately orthogonal to $\calA_{0}$. That is, if $\mu_{a}$ and $\mu_{s}$ are the absolutely continuous and the singular parts of the measure $\mu$ then we have that
+    \begin{align*}
+	\int_{\T} f d\mu_{a} = 0 \text{ and } \int_{\T} f d\mu_{s} = 0
+    \end{align*}
+    for every $f\in \calA_{0}$. 
+\end{corollary}
+\begin{proof}
+   Let $\rho$ be any finite positive measure satisfying
+   \begin{enumerate}
+       \item $\mu \ll \rho$ and $\frac{d\mu}{d\rho}$ is bounded, and
+       \item $\frac{d\rho}{d\theta} \ge \frac{1}{2\pi}$, that is, the Radon Nikodym derivative with respect to the normalised Lebesgue measure is bounded below by $1/2\pi$.
+   \end{enumerate}
+
+   Let $d\mu = \frac{1}{2\pi} h d\theta + d\mu_{s}$ be the Lebesgue decomposition of the measure $\mu$. We define a new measure on $\T$ by 
+   \begin{equation*}
+       d\rho =  \left( 1+ \abs{h} \right) \frac{d\theta}{2\pi} + d\abs{\mu_{s}}
+   \end{equation*}
+   where $\abs{\mu_{s}}$ is the variation measure of the complex measure $\mu_{s}$, the singular part of $\mu$.
+
+   We show that $\rho$ is an finite positive measure satisfying properties as in items 1 and 2 above. First, we show that $\rho$ is a finite positive measure. But before that note that the variation measure of any complex measure is  a finite measure.\footnote{See Cohn's Measure Theory -- Proposition 4.1.7}. Now, consider the following:
+   \begin{align*}
+       \rho\left( \T \right) &= \int_{\T} d\rho \\
+       &= \int_{\T} \left( 1+ \abs{h} \right) \frac{d\theta}{2\pi} + \int_{\T} d\abs{\mu_{s}}  & \text{by definition} \\
+       &= 1 + \abs{\mu_{a}} \left( \T \right) + \abs{\mu_{s}} \left( \T \right) & \mu_{a} \text{ is the absolutely continuous part of } \mu \\
+       &< \infty
+   \end{align*}
+   Now we proceed to show that item 1 holds for $\rho$. First, we prove that $\mu \ll \rho$. Let $A \in \scrB \left( \T \right)$ with $\rho \left( A \right) = 0$. Then we have that
+   \begin{align*}
+       \int_{A} \left( 1+ \abs{h} \right) \frac{d\theta}{2\pi} &=0 \text{ and} \\
+       \int_{A} d\abs{\mu_{s}} &= 0
+   \end{align*}
+   From this, we have that
+   \begin{align*}
+       \abs{\mu_{a}} \left( A \right) &=  \int_{A} \abs{h} \frac{d\theta}{2\pi} \\
+       &\le \int_{A} \left( 1+\abs{h}  \right)\frac{d\theta}{2\pi} \\
+       &= 0
+   \end{align*}
+   Since $\abs{\mu (A)} \le \abs{\mu_{a}} (A)$, we have that $\mu_{a} \left( A \right) = 0$. Also, it follows by the definition of the variation measure that $\mu_s \left( A \right) = 0$. Hence, we have that $\mu $ is absolutely continuous with respect to $\rho$. Now, we need to show that $\frac{d\mu}{d\rho}$ is bounded. \textcolor{red}{Needs work!}
+We proceed to show that item 2 holds. Observe that
+\begin{align*}
+    \frac{d\rho}{d\theta} = \left( 1+\abs{h} \right) \frac{1}{2\pi} \ge \frac{1}{2\pi}
+\end{align*}
+and hence we are done showing that $\rho$ is such a measure.
+
+Now, let $f\in \calA_{0}$. Then we have that
+\begin{align*}
+    \int_{\T} \abs{1-f}^{2} d\rho &= \int_{\T} \abs{1-f}^{2} \frac{d\rho}{d\theta} d\theta + \int_{\T} \abs{1-f}^2 d\mu_{s} \\
+    &\ge \int_{\T} \abs{1-f}^{2} \frac{d\rho}{d\theta} d\theta \\
+    & \ge \int_{\T} \abs{1-f}^{2} \frac{d\theta}{2\pi} \\ 
+    & \stackrel{how?}{\ge} 1
+\end{align*}
+
+Now, let $F$ be the orthogonal projection of $1$ into the closed subspace spanned by $\calA_{0}$ of $L^{2} \left( d\rho \right)$. Thus, by definition, we have that 
+\begin{equation*}
+    \int_{\T} \abs{1-F}^{2} = \inf_{f\in \calA_0} \int_{\T} \abs{1-f}^{2} d\rho \ge 1
+\end{equation*}
+Hence, we have that $1$ is not in the closed subspace spanned by $\calA_{0}$ of $L^{2} (d\rho)$. Hence, we have by Theorem \ref{thm:prelude-to-fm-riesz} that $\left( 1-F \right)^{-1} \in H^{2}$ and that 
+\begin{equation*}
+    \left( 1-F \right) \left( 1+\abs{h} \right) \in L^{2} = L^{2} \left( \frac{d\theta}{2\pi} \right)
+\end{equation*}
+From this, we can conclude that $h \in L^{2}$ by the following fashion:
+\begin{equation*}
+    \abs{h} = \underbrace{\left( 1-F \right) \left( 1+ \abs{h} \right)}_{\in L^{2}} \underbrace{\left( \abs{1-F}^{-1} \right)}_{\in H^{2} \leadsto \in L^{2}} -1
+\end{equation*}
+Hence, we have that $(1-F)h \in L^{2}$.
+
+Suppose $g\in \calA_{0}$. We claim that
+\begin{align*}
+    \int_{\T} \left( 1-F \right) g d\mu = 0
+\end{align*}
+\end{proof}
+
+Since $F\in \overline \calA_{0}$, there is a sequence $f_{n} \in \calA_{0}$ such that $f_{n} \to F$ in $L^{2} (d\rho)$. Hence,
+\begin{align*}
+    (1-f_{n})g \to \left( 1-F \right)g
+\end{align*}
+in $L^{2} \left( d\rho \right)$.
+
+Since $\frac{d\mu}{d\rho}$ is bounded, we have that 
+\begin{equation*}
+    \int_{\T} \left( 1-F \right) g d\mu = \int_{\T} \left( 1-F \right) g \frac{d\mu}{d\rho} d\rho = \lim_{n\to \infty} \int_{\T} \left( 1-f_{n} \right) \frac{d\mu}{d\rho} d\rho = 0 \text{.}
+\end{equation*}
+
+
+
+\begin{theorem}[Frigyez and Marcel Riesz, 1916]
+    Let $\mu$ be a complex Borel measure on the unit circle $\T$ such that
+    \begin{equation*}
+	\int_{\T} e^{in\theta} d\mu \left( e^{i\theta} \right) =0
+    \end{equation*}
+    for all $n\in\N$. Then $\mu$ is absolutely continuous with respect to the Lebesgue measure.
+    \label{thm:f-and-m-riesz}
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
 \section{Szegö's Theorem}
