@@ -373,7 +373,9 @@ Now, let $f\in \calA_{0}$. Then we have that
     \int_{\T} \abs{1-f}^{2} d\rho &= \int_{\T} \abs{1-f}^{2} \frac{d\rho}{d\theta} d\theta + \int_{\T} \abs{1-f}^2 d\mu_{s} \\
     &\ge \int_{\T} \abs{1-f}^{2} \frac{d\rho}{d\theta} d\theta \\
     & \ge \int_{\T} \abs{1-f}^{2} \frac{d\theta}{2\pi} \\ 
-    & \stackrel{how?}{\ge} 1
+    &= \norm{1-f}^{2} \\
+    &= \norm{1}^{2} + \norm{f}^{2} & \ip{f,1} = 0  \text{ as } f\in \calA_{0} \\
+&\ge 1 
 \end{align*}
 
 Now, let $F$ be the orthogonal projection of $1$ into the closed subspace spanned by $\calA_{0}$ of $L^{2} \left( d\rho \right)$. Thus, by definition, we have that 
@@ -407,7 +409,29 @@ Since $\frac{d\mu}{d\rho}$ is bounded, we have that
     \int_{\T} \left( 1-F \right) g d\mu = \int_{\T} \left( 1-F \right) g \frac{d\mu}{d\rho} d\rho = \lim_{n\to \infty} \int_{\T} \left( 1-f_{n} \right) \frac{d\mu}{d\rho} d\rho = 0 \text{.}
 \end{equation*}
 
+Now, $1-F = 0$ with respect to $d\abs{\mu_{s}}$ which implies that $1-F= 0$ with respect to $d\mu_{s}$.
 
+Thus, we have that 
+\begin{align*}
+    \left( 1-F \right) d \mu = \frac{1}{2\pi} \left( 1-F \right)h d\theta
+\end{align*}
+
+Hence, we have for $g \in \calA_{0}$
+\begin{align*}
+    \int_{\T} \left( 1-F \right) gh d\theta &= \int_{\T} (1-F)g d\mu  \\
+    &= 0
+\end{align*}
+
+Since $\overline{A} = H^{2}$. There is a sequence of functions ${g_{n}}$ in $\calA$ converging to $\left( 1-F \right)^{-1} \in L^{2} \left( \frac{d\theta}{2\pi} \right)$ in $L^{2}$-norm. Hence, we have for any $f\in \calA_{0}$,
+\begin{equation*}
+    \int_{\T} g_{n}f\left( 1-F \right)h d\theta = 0
+\end{equation*}
+
+
+Also, note that $\left( 1-F \right)h \in L^{2}$. From this, we can conclude that 
+\begin{equation*}
+    \int_{\T} fh d\theta = 0
+\end{equation*}
 
 \begin{theorem}[Frigyez and Marcel Riesz, 1916]
     Let $\mu$ be a complex Borel measure on the unit circle $\T$ such that
@@ -418,6 +442,19 @@ Since $\frac{d\mu}{d\rho}$ is bounded, we have that
     \label{thm:f-and-m-riesz}
 \end{theorem}
 \begin{proof}
-    
+    Suppose that $\mu$ is orthogonal to $\calA_{0}$. Then from the previous corollary, we have that $\mu_{a}$ is orthogonal to $\calA_{0}$ and $\mu_{s}$ is orthogonal to $\calA_{0}$. Since $\abs{\mu_{s}}$ is singular (definition?), we can find a sequence of functions $\left\{ f_{n} \right\}$ converging to $1$ in $L^{2} \left( d\abs{\mu_{s}} \right)$. Since $\mu_{s}$ is orthogonal to $\calA_{0}$, we have that
+    \begin{equation*}
+	\int_{\T} d\mu_{s} = \lim_{n\to \infty} \int_{\T} f_{n} d\mu_{s} = 0
+    \end{equation*}
+    Thus, $\mu_{s}$ is orthogonal to $1$. The singular measure $e^{-i\theta} d\mu_{s}$ is now orthogonal to $\calA_{0}$; hence it is orthogonal to $1$, that is, 
+    \begin{equation*}
+    \int_{\T} e^{-i\theta} d\mu_{s} = 0
+    \end{equation*}
+    Similarly, $e^{-2i\theta} d\mu_{s}$ is orthogonal to $\calA_{0}$, and consequently, orthogonal to $1$. Repeating thei process, we conclude that
+    \begin{equation*}
+	\int_{\T} e^{in\theta} = 0
+    \end{equation*}
+    for $n\in \Z$.
+    Hence $\mu_{s}$ must be the zero measure. Therefore our original measure $\mu$ is absolutely continuous. 
 \end{proof}
 \section{Szegö's Theorem}
