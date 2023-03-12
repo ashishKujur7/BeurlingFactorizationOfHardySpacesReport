@@ -458,3 +458,79 @@ Also, note that $\left( 1-F \right)h \in L^{2}$. From this, we can conclude that
     Hence $\mu_{s}$ must be the zero measure. Therefore our original measure $\mu$ is absolutely continuous. 
 \end{proof}
 \section{Szegö's Theorem}
+\begin{theorem}[Szegö]
+    Let $h \in L^{1} \left( \T \right)$ and suppose that $h \ge 0$ on $\T$ (that makes $h$ real valued!). Then the following holds:
+    \begin{align*}
+	\exp \left[ \frac{1}{2\pi} \int_{-\pi}^{\pi} \log h\left( e^{it} \right) dt \right] = \inf_{f\in \calA_{0}} \frac{1}{2\pi} \int_{-\pi}^{\pi} he^{\Re \left( f \right)}dt
+    \end{align*}
+    \label{thm:prelude-to-szego-kolmorogoff-krein}
+\end{theorem}
+\begin{proof}
+    We first claim that $\log h$ is integrable iff $\int \log h d\theta = -\infty$. To see this, first we decompose 
+    \begin{align*}
+	\int \log h d\theta = \underbrace{\int \left( \log h \right)^{+} d\theta}_{(\romannumeral1)} - \underbrace{\int \left( \log h \right)^{-} d\theta}_{(\romannumeral2)}
+    \end{align*}
+First observe that $\log h \le h$ (this follows by definition of $\log$) and hence, we have that $\left( \log h \right)^{+} \le h^{+}=h$. Thus, we have that integral $\left( \romannumeral1 \right)$ is finite. Therefore, $\log h$ is not integrable iff $\int \log h d\theta =- \infty$. 
+
+    Regardless of integrability of $\log h$, we have the following relation:
+    \begin{equation}
+	\exp \left[ \frac{1}{2\pi} \int_{\T} \log h\left( e^{it} \right) dt \right] \le \frac{1}{2\pi} \int_{\T} h\left( e^{it} \right) dt
+	\label{eqn:almost-am-gm}
+    \end{equation}
+
+    One can prove the famililar arithmetic and geometric means inequality from the above inequality. Let $n\in \N$ be arbitrary and $a_{1}, \ldots, a_{n}$ be positive real numbers. Let $A_{1}, A_{2}, \ldots , A_{n}$ be the disjoint subsets of $\T$ which cover it. Therefore, we have that
+    \begin{align*}
+	\mu \left( A_{i} \right) = \frac{2\pi}{n} \text{ for all } i=1,2,\ldots,n\text.
+    \end{align*}
+    Observe the following:
+    \begin{align*}
+	\log\left( a_{1} \chi_{A_{1}} + \ldots + a_{n} \chi_{A_{n}} \right) &= \log \left( a_{1} \chi_{A_{1}} + \ldots + a_{n} \chi_{A_{n}} \right) \\
+	&= \log \left( a_{1} \right) \chi_{A_{1}} + \ldots + \log \left( a_{n} \right) \chi_{A_{n}}
+    \end{align*}
+    Integrating both sides, we get
+    \begin{align*}
+	\frac{1}{2\pi} \int_{\T} \log\left( a_{1} \chi_{A_{1}} + \ldots + a_{n} \chi_{A_{n}} \right) dt &= \frac{1}{2\pi} \int_{\T}  \log \left( a_{1} \right) \chi_{A_{1}} + \ldots + \log \left( a_{n} \right) \chi_{A_{n}} dt \\
+	&= \frac{1}{2\pi} \left( \log \left( a_{1} \right) \mu \left( A_{1} \right) + \ldots +  \log \left( a_{n} \right) \mu \left( A_{n} \right) \right) \\
+	&=  \log \left( \sqrt[n]{a_{1}\ldots a_{n}} \right)
+    \end{align*}
+     
+    It can be seen now that it follows immediately.
+
+    Now, if $h\in L^{\T}$ and is nonnegative, $g$ is any real valued continuous function on $\T$ then we have that $he^{g}$ is an nonnegative $L^{1} \left( \T \right)$ because product of an $L^{1}$ function with a bounded funtion on a finite measure space retains it back and therefore, we can apply Equation \ref{eqn:almost-am-gm}. Futhermore, if we assume that $\int_{\T} g dt =0 $ then we have that 
+    \begin{align*}
+	\exp\left[ \frac{1}{2\pi} \int_{\T} \log \left( h\left( e^{it} \right) e^{g\left( e^{it} \right)}\right) dt \right] \le \frac{1}{2\pi} \int_{\T} h\left( e^{it} \right) e^{g\left( e^{it} \right)} dt \\
+	\leadsto \exp\left[ \frac{1}{2\pi} \int_{\T} \log \left( h\left( e^{it} \right) \right) dt + \cancelto{0}{\int_{\T} g\left( e^{it} \right) dt} \right] \le \frac{1}{2\pi} \int_{\T} h\left( e^{it} \right) e^{g\left( e^{it} \right)} dt \\
+\leadsto \exp\left[ \frac{1}{2\pi} \int_{\T} \log \left( h\left( e^{it} \right) \right) dt  \right] \le \frac{1}{2\pi} \int_{\T} h\left( e^{it} \right) e^{g\left( e^{it} \right)} dt \\
+    \end{align*}
+
+    Now, let $g=\Re f$ for some $f\in \calA_{0}$. Then we have that $g$ is continuous and real valued and hence the previous inequality holds, therefore, we have that 
+
+    \begin{equation*}
+	\exp\left[ \frac{1}{2\pi} \int_{\T} \log \left( h\left( e^{it} \right) \right) dt  \right] \le \frac{1}{2\pi} \int_{\T} h\left( e^{it} \right) e^{\Re \left( f\left( e^{it} \right) \right)} dt \text{.}
+    \end{equation*}
+    Since $f \in \calA_{0}$ is arbitrary, we have that 
+    \begin{equation*}
+	\exp\left[ \frac{1}{2\pi} \int_{\T} \log \left( h\left( e^{it} \right) \right) dt  \right] \le \inf_{f\in\calA_{0}} \frac{1}{2\pi} \int_{\T} h\left( e^{it} \right) e^{\Re \left( f\left( e^{it} \right) \right)} dt \text{.}
+    \end{equation*}
+
+    Now, we claim the set of functions $\Re f$ where $f\in \calA$ is dense subset of $L^{1}_{\R}\left( \T \right)$. This is easy to see. Let $f\in L^{1}_{\R} \left( \T \right)$. Then denseness of continuous functions in $L^{1} _{\R}\left( \T \right)$, we have that there is some function $g\in \calC _{\R} \left( \T \right)$ such that 
+    \begin{align*}
+	\norm{f-g}_{1} < \frac{\varepsilon}{2}
+    \end{align*}
+    Also, by Theorem \ref{thm:kinda-Fejer}, we have that there is some function $h\in \calA$ such that 
+    \begin{align*}
+	\norm{g-\Re h}_{\infty} < \frac{\varepsilon}{2}
+    \end{align*}
+    Therefore, we have that
+    \begin{align*}
+	\norm{f-\Re h}_{1} & \le \norm{f-g}_{1} + \norm{g-\Re h} & \text{Minkowski inequality} \\
+	& \le \norm{f-g}_{1} + \norm{f-g}_{\infty} & \text{finite measure space} \\
+	& \le \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon\text{.}
+    \end{align*}
+
+    This shows the denseness.
+
+    Now, we show that the $\left\{ f\in L^{1}_{\R} \left( \T \right) : \int_{\T} f d\theta = 0 \right\}$ is dense in set of all functions $f \in L^{1}_{\R} \left( \T \right)$ such that $\int f d\theta = 0$. This is immediate because closure distributes over intersections and $\left\{ f\in L^{1}_{\R} \left( \T \right) : \int_{\T} f d\theta = 0 \right\}$ is a closed subspace of $L^{1}_{\R} \left( \R \right)$.
+
+\end{proof}
+
