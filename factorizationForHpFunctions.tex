@@ -154,6 +154,14 @@ We now prove a necessary and sufficient condition for the convergence of product
     When either of the conditions are satisfied, the product defines an inner function whose zeros are exactly $\alpha_{1}, \alpha_{2}, \ldots$.
 \end{theorem}
 \begin{proof}
+    We first prove that last statement. Consider the partial product
+    \begin{equation*}
+	B_{n} \left( z \right) = \prod_{k=1}^{n} \frac{\bar{\alpha_{k}}}{\alpha_{k}} \frac{\alpha_{k}-z}{1-\bar{\alpha_{k}}z}.
+    \end{equation*}
+    Each $B_{n}$ is analytic in the closed unit disc and has modulus $1$ on the unit circle. If the sequence $\left( B_{n} \right)$ converges uniformly on compact subsets of $\abs{z} < 1$ to a function $B$, it is clear that $B$ is bounded byb $1$ and is analytic in the interior of the unit disc. Uniform convergence of the infinite product on compact sets yields an analytic function whose zeros are $\alpha_{1}, \alpha_{2}, \ldots$. In particular, this convergence implies
+    \begin{equation*}
+	\sum_{n=1}^{\infty} \left( 1-\abs{\alpha_{n}} \right) < \infty.
+    \end{equation*}
 \end{proof}
 
 \begin{definition}[Blaschke product]

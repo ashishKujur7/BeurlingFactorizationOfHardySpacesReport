@@ -18,4 +18,4 @@
 \contentsline {subsection}{\numberline {3.1.1}Characterising Outer Functions}{33}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}Infinite Products, Blaschke Products \& Singular Functions}{34}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Final Description of the Factorization}{39}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Two theorems due to Hardy}{41}{section.3.3}%
+\contentsline {section}{\numberline {3.3}Two theorems due to Hardy}{42}{section.3.3}%
