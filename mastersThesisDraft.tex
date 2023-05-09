@@ -16,6 +16,8 @@
 \usepackage{lipsum}
 \usepackage{stmaryrd}
 \usepackage{cancel}
+\usepackage{setspace}
+\onehalfspacing
 
 \newtheorem{theorem}{Theorem}[subsection]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -137,6 +139,10 @@
 \newcommand{\calY}{{\cal Y}}
 \newcommand{\calZ}{{\cal Z}}
 
+% proof
+\renewcommand{\qedsymbol}{$\ddot\smile$}
+
+
 % bold letters (useful for random variables)
 %----------------------------------------------
 % \renewcommand{\a}{{\boldsymbol a}}
@@ -238,7 +244,7 @@
 \renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter:\ #1}{}}
 
 \title{
-{Study of Closed Ideals of Disc Algebra}\\
+{Study of Inner Outer Factorization of Hardy Spaces}\\
 {\large Indian Institute of Science Education and Research -- Thiruvananthapuram}\\ \vspace{1cm}
 {\includegraphics[height=0.1\textheight]{iiser_logo.png}}
 }
@@ -250,4 +256,5 @@
 \maketitle \tableofcontents
 \include{analytic-harmonic.tex}
 \include{h1.tex}
+\include{factorizationForHpFunctions.tex}
 \end{document}

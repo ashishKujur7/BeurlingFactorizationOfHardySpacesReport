@@ -496,6 +496,7 @@ First observe that $\log h \le h$ (this follows by definition of $\log$) and hen
      
     It can be seen now that it follows immediately.
 
+
     Now, if $h\in L^{\T}$ and is nonnegative, $g$ is any real valued continuous function on $\T$ then we have that $he^{g}$ is an nonnegative $L^{1} \left( \T \right)$ because product of an $L^{1}$ function with a bounded funtion on a finite measure space retains it back and therefore, we can apply Equation \ref{eqn:almost-am-gm}. Futhermore, if we assume that $\int_{\T} g dt =0 $ then we have that 
     \begin{align*}
 	\exp\left[ \frac{1}{2\pi} \int_{\T} \log \left( h\left( e^{it} \right) e^{g\left( e^{it} \right)}\right) dt \right] \le \frac{1}{2\pi} \int_{\T} h\left( e^{it} \right) e^{g\left( e^{it} \right)} dt \\
@@ -532,5 +533,33 @@ First observe that $\log h \le h$ (this follows by definition of $\log$) and hen
 
     Now, we show that the $\left\{ f\in L^{1}_{\R} \left( \T \right) : \int_{\T} f d\theta = 0 \right\}$ is dense in set of all functions $f \in L^{1}_{\R} \left( \T \right)$ such that $\int f d\theta = 0$. This is immediate because closure distributes over intersections and $\left\{ f\in L^{1}_{\R} \left( \T \right) : \int_{\T} f d\theta = 0 \right\}$ is a closed subspace of $L^{1}_{\R} \left( \R \right)$.
 
+    Now, we claim that $\underbrace{\inf \{ \int he^{g} d\theta : g \in L^{1}, \int g =0 \}}_{:=\alpha} = \underbrace{\inf \left\{ \int he^{g} d\theta : g \in L^{\infty} , \int g =0 \right\}}_{:=\beta}$. Since $L^{\infty} \subset L^{1}$, we have that $\alpha \le \beta$ is clear. To show the reverse inequality, let $g \in L^{1}$ with $\int g d\theta = 0$. By the Simple Function Approximation Theorem, there is a sequence $g_{n} \in L^{\infty}$ such that $0 \le \abs{g_1} \le \abs{g_2} \le \ldots \le \abs{g}$ and $g_{n}$ converging to $g$ pointwise.
+
 \end{proof}
 
+\begin{theorem}[Szegő, Kolmogoroff-Krein]
+    Let $\mu$ be a finite Borel measure on the unit circle $\T$ and $h$ be the derivative of $\mu$ with respect to the normalised Lebesgue measure. Then
+    \begin{equation*}
+	\inf_{f\in \calA_{0}} \inf \abs{1-f}^{2} \, d\mu = \exp  \left[ \frac{1}{2\pi} \int_{\pi}^{\pi} \log h\left( e^{i\theta} \right) \, d\theta \right]
+    \end{equation*}
+    \label{thm:szego-kolmogoroff-krein}
+\end{theorem}
+
+\section{Completing the Discussion of \texorpdfstring{$H^1$}{\text{H1}}}
+
+\begin{corollary}
+    If $f \in H^{1} \left( \T \right)$, $f$ cannot vanish on a set of positive Lebesgue measure unless $f \equiv 0$ on $\T$
+    \label{cor:H1-f-zero}
+\end{corollary}
+\begin{proof}
+    Assume $f\not\equiv 0$. We wish to show that $f$ cannot vanish on a set of positive Lebesgue measure on $\T$. Since $\log \abs{f}$ is integrable on $\T$ (by Szego's theorem), we have that 
+    \begin{equation*}
+	\lambda \left( \left\{ e^{i\theta} \in \T \, : \, \abs{\log \abs{f\left( e^{i\theta}  \right)}}  = +\infty\right\} \right) = 0
+    \end{equation*}
+    since integrability implies finite almost everywhere. Therefore we have that 
+    \begin{equation*}
+	\lambda \left( \left\{ e^{i\theta} \in \T \, : \, f\left( e^{i\theta} \right) = 0 \right\} \right) = \lambda \left( \left\{ e^{i\theta} \in \T \, : \, \log \abs{f\left( e^{i\theta}  \right)}  = -\infty\right\} \right) = 0
+    \end{equation*}
+   
+    Thus, if $S$ is any measurable subset of the $\T$ where $f$ vanishes then we must be have that $\lambda \left( S \right) = 0$. This shows that $f$ cannot vanish on a set of positive Lebesgue measure.
+\end{proof}

@@ -1,0 +1,409 @@
+\chapter{Factorization for \texorpdfstring{$H^p$}{\text{Hp}} Functions}
+
+\section{Inner and Outer Functions}
+Let $f \in H^{1} \left( \D \right)$ be nonzero, that is, not identically zero.  Then $f$ has nontangential limits almost everywhere, due to Fatou's theorem. Define
+\begin{equation*}
+    \tilde{f} (e^{i\theta} ) = \lim_{z\to e^{i\theta}} f(z)
+\end{equation*}
+for almost every $e^{i\theta} \in \T$ and
+\begin{equation*}
+    f(re^{i\theta}) = \frac{1}{2\pi} \int_{-\pi}^{\pi} \tilde{f} \left( e^{it} \right) P_{r} \left( e^{i\left( \theta -t \right)} \right) dt.
+\end{equation*}
+
+As a consequence of Szegö's theorem, we have that $\log \left( \abs{f\left( e^{it} \right)} \right)$ is Lebesgue integrable. Let
+\begin{equation*}
+  F(z) = \exp \left[ \frac{1}{2\pi} \int_{-\pi}^{\pi} \frac{e^{i\theta}+z}{e^{i\theta} - z} \log |f(e^{i\theta})| \right]  d\theta  
+\end{equation*}
+Then $F$ is an analytic function in the unit disc. To prove this, let $g(e^{i\theta}) = \log \abs{f\left( e^{i\theta} \right)}$. Then we have that
+Let $(h_n)$ be sequence in $\mathbb C$ of nonzero terms converging to $0$ and $z \in \mathbb D$ Then $\lvert e^{i\theta } - z - h_n \rvert \to \lvert e^{i\theta} - z \rvert > 0$. Thus there exists $M > 0$ and $N \in \mathbb N$ such that $\lvert e^{i\theta } - z - h_n \rvert > M$ for all $n \ge N$. Let $g(z)=\frac{1}{2\pi} \int_{-\pi}^{\pi} \frac{e^{i\theta}+z}{e^{i\theta} - z} u(e^{i\theta})$Consider the following for $n\ge N$:
+
+\begin{align*}
+\left\lvert \frac{g(z+h_n) - g(z)}{h_n} \right\rvert &\le \frac{1}{2\pi} \int_{-\pi}^{\pi} \left\lvert \frac{2h_n e^{i\theta}}{(e^{i\theta}-z-h_n)(e^{i\theta}-z)} \right\rvert \lvert u(e^{i\theta}) \rvert d\theta \\
+&\le \frac{2h_n}{M \inf_{e^{i\theta} \in \mathbb T}{|e^{i\theta}-z|}} \lVert u \rVert_1
+\end{align*}
+This shows that $g$ is analytic and hence $e^g$ is analytic.
+
+\begin{definition}[Inner \& Outer Function]
+    Let $g \in H(\D)$. Then $g$ is said to be an \textbf{inner function} if 
+    \begin{itemize}
+	\item $|g(z)|\le 1$ for every $z \in \D$ and
+	\item $|g\left( e^{i\theta} \right) = 1$ for every $e^{i\theta} \in \T$.
+    \end{itemize}
+    A function $F: \D \to \C$ is said to be an \textbf{outer function} if 
+    \begin{equation*}
+	F(z) = \lambda \exp \left[ \frac{1}{2\pi} \int_{-\pi}^{\pi} \frac{e^{i\theta} + z}{e^{i\theta}-z} k\left( e^{i\theta} \right)  \, d\theta
+\right]     \end{equation*}
+for some integrable function $k : \T \to \R$ and some $\lambda \in \C$ with $\abs{\lambda}=1$.
+    \label{def:inner-outer-function}
+\end{definition}
+
+\begin{remark}
+    Few remarks follow for Definition \ref{def:inner-outer-function}:
+    \begin{itemize}
+	\item An outer function $F \in H^{z1} \left( \D \right)$ iff $e^{k}$ is integrable.
+	    \begin{proof}
+	It immediately follows by definition that
+	\begin{equation*}
+	    \abs{F} = \exp \left[ P\left[ k \right] \right] \text{ on } \D
+	\end{equation*}
+	Hence $\exp(k\left( e^{i\theta} \right)) = \hat{F}\left( e^{i\theta} \right)$ almost eveywhere by Fatou's lemma. By the isometric isomorphism, we have that
+	\begin{equation*}
+	    \norm{\exp\left( k \right)}_{H^{1}\left( T \right)} = \norm{F}_{H^{1} \left( \D \right)}
+	\end{equation*}
+	Thus, $\exp \left( k \right)$ is integrable.
+
+	To prove the converse, assume that $e^{k}$ is integrable. Then we have that 
+	\begin{align*}
+	    |F(re^{i\theta})| &= \exp \left( \frac{1}{2\pi} \int_{-\pi}^{\pi} P_{r} \left( e^{i(\theta-t)} k\left( e^{i\theta} \right) d\theta \right) \right) \\
+		&\le \frac{1}{2\pi} \int_{-\pi}^{\pi} \exp \left( k\left( e^{i\theta} \right) \right)  d\theta & \text{(Jensen Inequality)} \\
+		&= \norm{\exp(k)}_{1}
+	\end{align*}
+	This completes the proof of the remark.
+	    \end{proof}
+	\item If $F$ is an outer function in $H^{1}$ then we have zthat 
+	    \begin{equation*}
+		k\left( e^{i\theta} \right) = \log \abs{F\left( e^{i\theta} \right)} \text{ almost everyhere}
+	    \end{equation*}
+	    \begin{proof}
+		This is evident from Fatou's lemma.
+	    \end{proof}
+    \end{itemize}
+    \label{rem:outer-function}
+\end{remark}
+
+\subsection{Characterising Outer Functions}
+\begin{theorem}
+Let $F$ be a nonzero function in $H^{1}$. TFAE:
+\begin{enumerate}[label=(\roman*)]
+    \item $F$ is an outer function.
+    \item If $f$ is any function in $H^{1}$ such that $\abs{f}=\abs{F}$ almost everywhere on $\T$ then $\abs{F\left( z \right)}\ge \abs{f\left( z \right)}$ on $\D$.
+    \item $\log \abs{F(0)} = \frac{1}{2\pi} \int_{-\pi}^{\pi} \log \abs{F\left( e^{i\theta} \right)} d\theta$.
+\end{enumerate}
+    \label{thm:classification-outer-functions}
+\end{theorem}
+
+Proving this (i) implies (ii) will take a while. To prove this direction, we prove a result due to Jensen (1915).
+
+\begin{proof}[Proof of (ii) implies (i)]
+    Suppose that (ii) holds. Since $F$ is nonzero function and is in $H^{1}$, we have that $\log \abs{F\left( e^{i\theta} \right)}$ is integrable and hence, we have the following function
+\begin{equation}
+    G(z) = \exp \left[ \frac{1}{2\pi} \int_{-\pi}^{\pi} \frac{e^{i\theta} + z}{e^{i\theta}-z} \log \abs{ F\left( e^{i\theta} \right)}  \, d\theta
+\right]   \label{eqn:outer-function}  \end{equation}
+is an outer function. 
+Since $G$ is an outer function, we have by Remark \ref{rem:outer-function} that $\abs{F(e^{i\theta})} = \abs{G\left( e^{i\theta} \right)}$ for almost every $\theta$. Consequently, $\norm{G}_{L^{1} \left( \D \right)} = \norm{F}_{H^{1}\left( \D \right)} < +\infty$. By (ii), we have that $|F(z)| \ge |G(z)|$ for each $z\in \D$. Since $G$ is nonzero, we have that $\abs{F(z)}\le \abs{G(z)}$ on $\D$. By interchanging the roles of $F$ and $G$, we have that $\abs{F(z)}=\abs{G(z)}$ on $\D$. Thus, $F/G$ is analytic and everywhere of absolute value $1$. Define the function $\lambda : \D \to \C$ by $\lambda = F/G$. Then we have by the open mapping theorem, that $\lambda \left( \D \right)$ must be an open set. However, we have that $\lambda $ maps an open set to a subset of $\T$. Hence, $\lambda$ must be a constant.
+\end{proof}
+
+We proceed to show that $\left( i \right) \Leftrightarrow \left( iii \right)$.
+\begin{proof}[Proof of $\left( i \right) \Leftrightarrow \left( iii \right)$]
+    Note that $\left( \Rightarrow \right)$ is immediate. We proceed to show that $\left( iii \right) \Rightarrow \left( i \right)$. Define $G$ as in \ref{eqn:outer-function}. Then we have that $F/G$ is bounded by $1$ in the disc. This is a direct consequence of definition of $G$ and Fubini's theorem.
+    Also, $F/G$ has modulus $1$ at zero. Thus, by Maximum modulus theorem, we have that $F/G=\lambda$, a constant of modulus $1$ in $\D$. 
+\end{proof}
+
+We finally prove $\left( i \right)$ implies $\left( ii \right)$. We state the following theorem without proof.
+\begin{theorem}[Poisson-Jensen (1915)]
+    Suppose that $f \in \calA \left( \D \right)$ and f has no zeroes on $\T$. Let $a_{1}, a_{2}, \ldots , a_{n}$ be the distinct zeros of $f$ in $\D$ with multiplicities $k_{1}, \ldots , k_{n}$ respectively. Then for $re^{i\theta}\in \D \setminus \left\{ a_{1}, a_{2}, \ldots , a_{n} \right\}$, we have 
+    \begin{equation*}
+	\ln \abs{f\left( re^{i\theta}` \right)} = \sum_{j=1}^{n} k_{j} \ln \abs{\frac{z-a_{j}}{1-\overline{a_{j}}z}} + \frac{1}{2\pi} \int_{-\pi}^{\pi} P_{r} \left( e^{i\left( \theta-t \right)}  \right) \ln \abs{f\left( e^{it} \right)} dt
+    \end{equation*}
+    \label{thm:Poisson-Jensen}
+\end{theorem}
+\section{Infinite Products, Blaschke Products \& Singular Functions}
+
+\begin{theorem}
+    Let $f$ be a bounded analytic function in the unit disc and further suppose that $f\left( 0 \right) \ne 0$. If $\left( \alpha_{n} \right)$ is the sequence of zeros in the open disc repeated as often as the multiplicity of the zero of $f$ then the product is convergent, that is, 
+    \begin{equation*}
+	\sum_{n=1}^{\infty} \left( 1-\abs{\alpha_{n}} \right) < \infty
+    \end{equation*}
+    \label{thm:Blaschke-product}
+\end{theorem}
+\begin{proof}
+    We may assume wlog that $\abs{f} \le 1$ for convenience. If $f$ has finitely many zeroes there is no question of convergence. Now, suppose that there are infinitely many zeroes. We claim that there can be only countably many of them.
+
+    Let $r<1$. We claim that there are only finitely many zeroes of $f$ in $\overline{B\left( 0,r \right)}$. Suppose not. Then by Bolzano Weierstrass theorem, we have that $Z(f)$ have a limit point in $\overline{B(0,r)}$. By the identity theorem, we have that $f$ must be identically zero in $\overline{B(0,r)}$.But then this would contradict the fact that $f(0)\ne 0$. Thus, every closed disk contains at most finitely many zeroes of $f$. Let $\left( r_{n} \right)$ be a strictly increasing sequence converging to $1$. Then zeroes of $f$ in $\D$ is the union of zeroes of $f$ in the disk $\overline{B(0,r_{n})}$. This shows that the zeroes of the $f$ is countable.
+
+    Let $\left( \alpha_{n} \right)$ be the sequence of zeroes counting multiplicities. We define a partial product $B_{n}\left( z \right)$ in the following fashion:
+    \begin{equation*}
+	B_{n} \left( z \right) = \prod_{k=1}^{n} \frac{z-\alpha_{k}}{1-\overline{\alpha_{k}}z_{k}}
+    \end{equation*}
+    Observe that each $B_n$ is a a rational function, analytic on $\D$ and whose absolute value is $1$ on the boundary of the disc.
+
+    We now claim that $f/B_{n}$ is a bounded analytic function on the unit disc. This can be seen as follows. First observe that $f/B_{n}$ is bounded above by $1$ on the boundary of the disc:
+    \begin{equation*}
+	\abs{\frac{f\left( e^{i\theta} \right)}{B_{n} \left( e^{i\theta} \right)}} = \abs{f\left( e^{i\theta} \right)} \le 1
+    \end{equation*}
+    for almost all $\theta$.
+    Hence, by the maximum modulus theorem, we have that $\abs{f(z)} \le \abs{B_{n} \left( z \right)}$ on $\D$.
+    Thus, we have that
+    \begin{equation*}
+	0 < \abs{f(0)} \le \abs{B_{n} \left( 0 \right)} = \prod_{k=1}^{n} \abs{\alpha_k}
+    \end{equation*}
+    Since $\abs{\alpha_{k}}< 1$ for each $k \in \N$, we have that the product is decreasing and is bounded by a nonnegative number and hence the product converges.
+\end{proof}
+
+We now prove a necessary and sufficient condition for the convergence of product of zeroes of an analytic function.
+
+\begin{theorem}
+    Let $\left( \alpha_{n} \right)$ be a sequence of nonzero complex numbers in the open unit disc. A necessary and sufficient condition that the infinite product 
+    \begin{equation*}
+	\prod_{n=1}^{\infty} \frac{\overline{\alpha_{n}}}{\abs{\alpha_{n}}} \frac{\alpha_{n} - z}{ 1- \overline{\alpha_{n}}z}
+    \end{equation*}
+    should converge uniformly on compact subsets of the disc is that the product $\prod \abs{\alpha_{n}}$ should converge, that is, that 
+    \begin{equation*}
+	\sum_{n=1}^{\infty} \left( 1-\abs{\alpha_{n}} \right) < \infty
+    \end{equation*}
+    When either of the conditions are satisfied, the product defines an inner function whose zeros are exactly $\alpha_{1}, \alpha_{2}, \ldots$.
+\end{theorem}
+\begin{proof}
+\end{proof}
+
+\begin{definition}[Blaschke product]
+    A Blaschke product is an analytic function of the form
+    \begin{equation*}
+	B\left( z \right) = z^{p} \prod_{n=1}^{\infty} \left[ \frac{\overline{\alpha_{n}}}{\abs{\alpha_{n}}} \frac{\alpha_{n}-z}{1-\overline{\alpha_{n}}z} \right]^{p^{n}}
+    \end{equation*}
+
+    where
+    \begin{enumerate}[label=(\roman*)]
+	\item $p, p_{1}, p_{2}, \ldots$ are nonnegative integers;
+	\item the $\alpha_{n}$ are distinct nonzero integers in the open unit disc;
+	\item the product $\prod \abs{\alpha_{n}}^{p_{n}}$ is convergent.
+    \end{enumerate}
+    \label{def:blaschke-product}
+\end{definition}
+
+\begin{theorem}
+    Let $f \in H^{\infty}$ and suppose that $f\not \equiv 0$, that is, not identically zero.  Then $f$ is uniquely expressible in the form $f=Bg$ where $B$ is a Blaschke product and $g$ is a bounded analytic function without any zeros.
+    \label{thm:factor-bounded-function}
+\end{theorem}
+\begin{proof}
+    Suppose that $f\in H^{\infty}$ and suppose that $f$ is not identically zero.  We wish to show that $f$ can factored as a Blaschke product as in the previous definition and a bounded analytic function which is zerofree.
+
+    Since $f$ is not identically zero, we write $f(z)= z^{p} h(z)$ where $h$ is analytic and $h(0)\ne 0$ by Taylor's theorem on $\D$. Let $\alpha_{1}, \alpha_{2}, \ldots , \alpha_{n}$ be the roots of $h$ with multiplicities $p_{1}, p_{2}, \ldots, p_{n}$ respectively. We then consider the Blaschke product $B$ formed by the zeroes of $h$. Hence, 
+    \begin{equation*}
+	B(z)= z^{p} \prod_{n=1}^{\infty} \left[ \frac{\overline{\alpha_{n}}}{\abs{\alpha_{n}}} \frac{\alpha_{n} -z}{1-\alpha_{n}z} \right]^{p^{n}}
+    \end{equation*}
+    
+    Let us suppose that $\norm{f}_{H^{\infty}} \le M$. Then by the isometry isomorphism, we have that $\norm{f}_{H^{\infty} \left( T \right)} \le M$. Hence, we have that 
+    \begin{equation*}
+	\abs{\frac{f\left( e^{i\theta} \right)}{B\left( e^{i\theta} \right)}} = \abs{f\left( e^{i\theta} \right)}\le M
+    \end{equation*}
+    almost all $e^{i\theta} \in \T$.
+    Thus by the maximum modulus theorem, we have that $\abs{f(z)} \le \abs{B_{n}(z)}$ for $z\in \D$. Thus $g=f/B$ is bounded and analytic on $\D$. Hence, we have that $f=Bg$ is unique because a Blaschke product is uniquely determined by its zeros.
+\end{proof}
+
+\begin{theorem}
+    Let $g$ be an inner function without zeroes, and suppose that $g(0)$ is positive. Then there is a unique singular positive measure $\mu$ on $\T$ such that
+    \begin{equation*}
+	g(z)= exp \left[ - \int_{T} \frac{e^{i\theta} + z}{e^{i\theta} - z} d\mu \left( e^{i\theta} \right) \right]
+    \end{equation*}
+    \label{thm:factoring-inner-function}
+\end{theorem}
+\begin{proof}
+    Let $g$ be analytic function in the disc which is zerofree. Then $g$ has an analytic logarithm. Therefore, we may write 
+    \begin{equation*}
+	g= e^{-h}
+    \end{equation*}
+    for some analytic function $h$ in the disc. Since $g$ is bounded by $1$, it must be that $h$ must be nonnegative on the disc. Let $h=u+iv$ for some real valued functions $u,v$. Then $u\ge 0$.
+
+    Now, the nonnegative harmonic function $u$ is uniquely expressible in the form
+    \begin{equation*}
+	u\left( re^{i\theta} \right) = \int P_{r} \left( \theta-t \right) d\mu \left( t \right)
+    \end{equation*}
+    where $\mu$ is a positive measure on the circle. SIince $g\left( 0 \right) > 0$ we  have that $v\left( 0 \right) = 0$. Thus, we have that 
+    \begin{equation*}
+	h\left( z \right) = \int \frac{e^{i\theta}+z}{e^{i\theta}-z} d\theta.
+    \end{equation*}
+    Now, $\abs{g}=1$ almost everywhere on the circle. Since $\abs{g}=e^{-u}$, this means the non-tangential limits of $u$ must vanish almost everywhere on $\T$. But these non-tangential limits are equal to $\frac{1}{2\pi} \frac{d\mu}{d\theta}$. So $\mu$ is singular and this completes the proof.
+\end{proof}
+
+\begin{theorem}
+    Let $f \ne 0$ be an $H^{1}$ function in the unit disc. Then $f$ is uniquely expressible in the form of $f=BSF$ where $B$ is a Blaschke product, $S$ is a singular function and $F$ is an outer function (in $H^{1}$).
+    \label{thm:BSF}
+\end{theorem}
+\begin{proof}
+    Since $f \ne 0$ and is in $H^{1}$, we have that $f=gF$ for some inner function $g$ and outer function $F$. We know that this factorization is unique up to constant multiple of modulus $1$. If $B$ is the Blaschke product formed from the zeroes of $g$ (that is, the zeroes of $f$) then $g=BS$, where $S$is an inner function without zeroes. By multiplying $g$ by a constant of modulus $1$, we can arrange that so that $S\left( 0 \right) > 0$, that is a singular function. WE can absorb that into the outer function $F$ and we are done.
+\end{proof}
+
+\subsection{Final Description of the Factorization}
+Let $f\in H^{1} \left( \D \right)$, $f\not\equiv 0$. By the previous theorem, we have that $f$ can be factorized to $BSF$ as in the previous theorem. Let $p$ be the order of zero of $f$ at the origin and let $p_{1}, p_{2}, \ldots$ be the multiplicities of the remaining zeroes $\alpha_{1}, \alpha_{2}, \ldots$ of $f$. 
+
+Then we have that
+\begin{align*}
+    B\left( z \right) &= z^{p} \prod_{n=1}^{\infty} \left[ \frac{\overline{\alpha_{n}}}{\abs{\alpha_{n}}} \frac{\alpha_{n} - z}{ 1- \overline{\alpha_{n}}z} \right]^{p_{n}} \\
+    F\left( z \right) &=  \exp \left[ \frac{1}{2\pi} \int_{-\pi}^{\pi} \frac{e^{i\theta} + z}{ e^{i\theta} -z} \left( \log \abs{f\left( e^{i\theta} \right)} + ia \right) d\theta \right]  \\
+    S\left( z \right) &= \frac{f\left( z \right)}{B\left( z \right) F\left( z \right)} = \exp \left[ -\int \frac{e^{i\theta} +z}{ e^{i\theta} - z} d\mu \left( \theta \right) \right]
+\end{align*}
+for some positive singular measure $\mu$ and where $a= \arg \left( f/B \right) \left( 0 \right)$.
+
+We can deduce a generalised Jensen formula from this factorisation. If $f\left( 0 \right) \ne 0$ then 
+\begin{equation*}
+    \frac{1}{2\pi} \int_{-\pi}^{\pi} \log \abs{f\left( e^{i\theta} \right)} d\theta = \log \abs{f\left( 0 \right)} + \sum_{n} p_{n} \log \abs{\alpha_{n}}^{-1} + \int d\mu.
+\end{equation*}
+
+\begin{definition}
+    If a function $f$ can be factorised into $BSF$ where the notations are as in the previous theorem, we will call $F$ the \textbf{outer part} of $f$ and $B\cdot S$ the \textbf{inner} part of $f$.
+    \label{def:inner-and-outer-part-of-a-function}
+\end{definition}
+
+\begin{theorem}
+    The Blaschke product whose zeroes are 
+    $$\alpha_{1}, \alpha_{2} , \ldots, \; 0 < \abs{\alpha_{n}} < 1$$
+    converges at all points $z$ in the complex plane except those in the compact set $K$ consisting of 
+    \begin{enumerate}[label=(\roman*)]
+	\item the points $z=1/\overline{\alpha_{n}}$;
+	\item the points $z$ on the unit circle which are accumulation points of the sequence $\left( \alpha_{n} \right)$.
+    \end{enumerate}
+    The convergence is uniform on any closed set in the plane which is disjoint from $K$, and the product $B\left( z \right)$ is thus analytic off $K$.
+    \label{thm:blaschke-singular-analytic-more-disc}
+\end{theorem}
+\begin{proof}
+    First, we need to show that the set $K$ which is defined by
+    \begin{equation*}
+	K= \left\{ \frac{1}{\bar{\alpha_{n}}} : n \in \mathbb N \right\} \cup \left\{ z \in \T \, : \, z \text{ is an accumulation point of the sequence } \left( \alpha_{n} \right) \right\}
+    \end{equation*}
+    is indeed a compact set.
+
+    By the Blaschke condition, we have that $\sum_{n \in \N} \left( 1- \abs{\alpha_{n}} \right)$ and hence $\lim_{n\to \infty} \abs{\alpha_{n}} = 1$. This tells us that the sequence $K$ is bounded. To show that $K$ is compact, it suffices to show that the set $K$ is closed. It is easy to see that the sequence $\left( \frac{1}{\bar{\alpha_{n}}} \right)$ must accumulate on the boundary because $\left( \alpha_{n} \right)$ can only accumulate on the boundary. Thus, $K$ is closed. This shows that the set $K$ is compact.
+
+    Let $F$ be any closed set disjoint from $K$. Then let $M= d\left( F,K \right) > 0$. Then we have that for every $z\in F$ and every $n\in\N$, 
+    \begin{equation*}
+	\abs{\frac{1}{\bar{\alpha_{n}}-z}} \ge N \Longleftrightarrow \abs{1-\bar{\alpha_{n}}z} \ge M.
+    \end{equation*}
+    Now, for $z\in K$, we have that
+    \begin{align*}
+	1-f_{n}\left( z \right) &= \frac{1-\abs{\alpha_{n}}}{\abs{\alpha_{n}}} \left[ \frac{1+\abs{\alpha_{n}}}{1-\bar{\alpha}_{n}z} -1 \right] \\
+	\leadsto \abs{1-f_{n}(z)} &\le \frac{1-\abs{\alpha_{n}}}{\abs{\alpha_{n}}} \left[ \frac{2}{M} + 1 \right]
+    \end{align*}
+
+    Since the sequence $\left( \alpha_{n} \right)$ satisfies the Blaschke condition, we have that $\sum_{n} \left( 1- \abs{\alpha_{n}} \right)$ converges and as s a consequence we have that $\sum \abs{1-f_{n}\left( z \right)}$ is uniformly summable and hence the product $\prod_{n} f_{n} \left( z \right)$ is uniformly and absolutely convergent on the closed sets disjoint from $K$. This shows that the Blaschke product $B\left( z \right)$ is analytic off $K$. \footnote{See Theorem 6.1.7 in Ash \& Novinger's Complex Variables.} 
+\end{proof}
+
+Before we go on the next theorem, we make the following definition:
+\begin{definition}
+    Let $\mu$ be a finite signed or a complex measure. The support of the measure $\mu$ is defined in the following manner:
+    \begin{equation*}
+	\operatorname{supp} \left( \mu \right) = X \setminus \bigcup \left\{ G \subset \T \, : \, G \text{ open}, \mu \left( G \right) = 0 \right\}.
+    \end{equation*}
+    \label{def:support-of-a-measure}
+\end{definition}
+
+\begin{theorem}
+    Let $\mu \in \calM \left( \T \right)$ be a positive singular measure. Consider the singular function $S$ that is determined by $\mu$. Note that $S : \C \to \C$ is given by:
+    \begin{equation*}
+	S\left( z \right) = \exp \left[ -\int_{-\pi}^{\pi} \frac{e^{i\theta} + z}{e^{i\theta} - z} d\mu \left( \theta \right) \right]
+    \end{equation*}
+    for each $z\in \C$. Then we have that $S$ is analytic in $\C \setminus \operatorname{supp} \left( \mu \right)$. Also, the function $S$ (or even $\abs{S}$) is not continuously extendable from the interior of the disc to any point in $\operatorname{supp} \left( \mu \right)$.
+    \label{thm:analyticity-of-singular-functions}
+\end{theorem}
+\begin{proof}
+    Let $\mu$ be a finite positive measure on $\T$.
+\end{proof}
+
+
+\section{Two theorems due to Hardy}
+Before we prove the theorems due to Hardy and an another one which due to Haryd and Littlewood, we prove a lemma which is nontrivial, in the sense, that every $H^{1}$ function can be factored as a product of two $H^{2}$ functions. On the other hand, it can be easily seen that product of two $H^{2}$ functions is always a $H^{1}$ function.
+
+\begin{theorem}[Hardy's inequality]
+    Let $F \in H^{1} \left( \D \right)$. Then there exists $G, K \in H^{2} \left( \D \right)$ such that
+    \begin{equation*}
+	F=GK
+    \end{equation*}
+    and
+    \begin{equation*}
+	\norm{F}_{1} = \norm{G}_{2} ^{2} = \norm{K}_{2} ^{2}.
+    \end{equation*}
+    \label{lem:h1-factored-h2}
+\end{theorem}
+\begin{proof}
+    By Theorem \ref{thm:factor-bounded-function}, $F$ can be factored into $F=B \Phi$ where $B$ is a Blaschke product and $\Phi \in H^{1} \left( \D \right)$ is free of zeroes on $\D$ with $\norm{\Phi}_{1} = \norm{F}_{1}$. Since $\Phi$ is zerofree on $\D$, it must have an analytic square root. \footnote{For a proof of this fact, see Complex Variables by Ash and Novinger.} Let 
+    \begin{align*}
+	G=B\Phi ^{1/2} \text{ and } K= \Phi ^{1/2}.
+    \end{align*}
+    Clearly then $GK=F$ and $\norm{K}_{2}^{2} = \norm{\Phi}_{1} = \norm{F}_{1}$. Moreover, again by Theorem \ref{thm:factor-bounded-function}, we have that
+    \begin{equation*}
+	\norm{G}_{2}^{2} = \norm{B\Phi ^{1/2}}_{2} ^{2} = \norm{\Phi ^{1/2}}_{2}^{2} = \norm{\Phi}_{1} = \norm{F}_{1}.
+    \end{equation*}
+\end{proof}
+
+Now, we state Hardy's inequality:
+
+\begin{theorem}[Hardy]
+    Let $f$ be a function in $H^{1}$ with power series
+    \begin{equation*}
+	\sum_{n=0}^{\infty} a_{n} z^{n}.
+    \end{equation*}
+    Then we have that
+    \begin{equation*}
+	\sum_{n=1}^{\infty} \frac{1}{n} \abs{a_{n}} \le \pi \norm{f}_{1}.
+    \end{equation*}
+    \label{thm:hardy-inequality}
+\end{theorem}
+\begin{proof}
+    First, we consider the case when the "Fourier" coefficients of $f$ are $a_{n} \ge 0$ for $n\ge 0$. Then we have that 
+    \begin{equation*}
+	\Im f\left( re^{i\theta} \right) = \sum_{n=1}^{\infty} a_{n} r^{n} \sin \left( n\theta \right).
+    \end{equation*}
+    A simple computation shows that 
+    \begin{equation*}
+	\frac{1}{2\pi} \int_{0}^{2\pi} \left( \pi-\theta \right) \sin \left( n\theta \right) d\theta = \frac{1}{n}.
+    \end{equation*}
+    Using the above, we have that
+    \begin{equation*}
+	\sum_{n=1}^{\infty} \frac{1}{n}a_{n}r^{n} = \frac{1}{2\pi} \int_{0}^{2\pi} \left( \pi-\theta \right) \Im f\left( re^{i\theta} \right) d\theta \le \frac{1}{2} \int_{0}^{2\pi} \abs{f\left( re^{i\theta} \right)} d\theta = \pi \norm{f}_{1}
+    \end{equation*}
+    Letting $r \to 1$, we have the theorem where we assumed that $a_{n} \ge 0$.
+
+    Using the above theorem \ref{lem:h1-factored-h2}, we have that the function $f$ can be factored into two $H^{2}$ functions. Hence, we have that 
+    \begin{equation*}
+	f=gh.
+    \end{equation*}
+    Now, we can write 
+    \begin{align*}
+	g\left( z \right) &= \sum_{n=0}^{\infty} b_{n} z^{n} \\
+	h\left( z \right) &= \sum_{n=0}^{\infty} c_{n} z^{n}
+    \end{align*}
+    Then by the Riesz Fischer theorem, we have that the functions
+    \begin{align*}
+	G\left( z \right)  = \sum \abs{b_{n}} z^{n} \\
+	H\left( z \right) = \sum \abs{c_{n}} z^{n}
+    \end{align*}
+    are also in $H^{2}$; in fact, 
+    \begin{align*}
+	\norm{G}_{2} = \norm{g}_{2} \\
+	\norm{H}_{2} = \norm{h}_{2}.
+    \end{align*}
+    Let $F=GH$. Certainly $F\in H^{1}$ and we have that 
+    \begin{equation*}
+	F\left( z \right) = \sum_{n=0}^{\infty} \tilde{a_{n}} z^{n}
+    \end{equation*}
+    where $\tilde{a_{n}}\ge 0$. It is also apparent that $\abs{a_{n}} \le \tilde{a_{n}}$. It follows by the first part of the proof that 
+    \begin{equation*}
+	\sum_{n=1}^{\infty} \frac{1}{n} \abs{a_{n}} \le \sum_{n=1}^{\infty} \frac{1}{n} \tilde{a_{n}} \le \pi \norm{F}_{1}.
+    \end{equation*}
+
+    But
+    \begin{equation*}
+	\norm{F}_{1} \le \norm{G}_{2} \norm{H}_{2} = \norm{g}_{2} \norm{h}_{2} = \norm{f}_{1}
+    \end{equation*}
+    and this completes the proof.
+\end{proof}
+
+\begin{theorem}
+    Let $f$ be a function on the unit circle which is both of bounded variation and in $H^{1}$. Then 
+    \begin{enumerate}[label=(\roman*)]
+	\item $f$ is an absolutely continuous function;
+	\item the Fourier series for $f$ is absolutely convergent.
+    \end{enumerate}
+    \label{thm:bdd-var-h1}
+    
+\end{theorem}
+    \begin{proof}
+	Since $f$ is of bounded variation, the Fourier coefficients of $f$ are 
+	\begin{equation*}
+	    a_{n} = \frac{1}{2\pi} \int_{-\pi}^{\pi} f\left( e^{i\theta} \right) e^{-in\theta} d\theta = \frac{i}{n} \frac{1}{2\pi} \int_{-\pi}^{\pi} e^{-in\theta} df\left( \theta \right) \text{ for } \ne 0
+	\end{equation*}
+    This shows that $df$ is analytic. By F and M Riesz, $df$ is absolutely continuous, i.e, $df= g d\theta$, where $g \in H^{1}$. Thus $a_{n} = \frac{i}{n}b_{n}$ where $b_{n}$ is the nth Fourier coeffiecient of $g$ for $n=1,2,3, \ldots$. By the last theorem, we have that
+    \begin{equation*}
+	\sum_{i=1}^{\infty} \abs{a_{n}} = \sum_{n=1}^{\infty} \frac{1}{n} \abs{b_{n}} < \infty
+    \end{equation*}
+    \end{proof}
