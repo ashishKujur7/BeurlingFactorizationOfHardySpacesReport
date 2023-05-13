@@ -82,7 +82,7 @@ Let $F$ be a nonzero function in $H^{1}$. TFAE:
     \label{thm:classification-outer-functions}
 \end{theorem}
 
-Proving this (i) implies (ii) will take a while. To prove this direction, we prove a result due to Jensen (1915).
+Proving this (i) implies (ii) will take a while. To prove this direction, we need a result due to Jensen (1915) which we will state later.
 
 \begin{proof}[Proof of (ii) implies (i)]
     Suppose that (ii) holds. Since $F$ is nonzero function and is in $H^{1}$, we have that $\log \abs{F\left( e^{i\theta} \right)}$ is integrable and hence, we have the following function
@@ -99,14 +99,36 @@ We proceed to show that $\left( i \right) \Leftrightarrow \left( iii \right)$.
     Also, $F/G$ has modulus $1$ at zero. Thus, by Maximum modulus theorem, we have that $F/G=\lambda$, a constant of modulus $1$ in $\D$. 
 \end{proof}
 
-We finally prove $\left( i \right)$ implies $\left( ii \right)$. We state the following theorem without proof.
+We finally prove $\left( i \right)$ implies $\left( ii \right)$. We state the following theorem without proof. However, the proof of this theorem can be found in \cite{rudin1987real} and \cite{ash2014complex}.
 \begin{theorem}[Poisson-Jensen (1915)]
     Suppose that $f \in \calA \left( \D \right)$ and f has no zeroes on $\T$. Let $a_{1}, a_{2}, \ldots , a_{n}$ be the distinct zeros of $f$ in $\D$ with multiplicities $k_{1}, \ldots , k_{n}$ respectively. Then for $re^{i\theta}\in \D \setminus \left\{ a_{1}, a_{2}, \ldots , a_{n} \right\}$, we have 
     \begin{equation*}
-	\ln \abs{f\left( re^{i\theta}` \right)} = \sum_{j=1}^{n} k_{j} \ln \abs{\frac{z-a_{j}}{1-\overline{a_{j}}z}} + \frac{1}{2\pi} \int_{-\pi}^{\pi} P_{r} \left( e^{i\left( \theta-t \right)}  \right) \ln \abs{f\left( e^{it} \right)} dt
+	\ln \abs{f\left( re^{i\theta}` \right)} = \sum_{j=1}^{n} k_{j} \ln \abs{\frac{z-a_{j}}{1-\overline{a_{j}}z}} + \frac{1}{2\pi} \int_{-\pi}^{\pi} P_{r} \left( e^{i\left( \theta-t \right)}  \right) \ln \abs{f\left( e^{it} \right)} dt.
     \end{equation*}
     \label{thm:Poisson-Jensen}
 \end{theorem}
+
+Before we start the proof of this direction, we prove an immediate consequence of this theorem \ref{thm:Poisson-Jensen}. Setting $r=0$ in the previous theorem and observing that
+\begin{equation*}
+    \abs{\frac{z-a}{1-\overline{a}z}}<1
+\end{equation*} we have that
+\begin{equation*}
+    \ln \abs{f(0)} \le \frac{1}{2\pi} \int_{-\pi}^{\pi} \ln \abs{f(e^{it})} dt.
+\end{equation*}
+
+Now, we begin the proof of this theorem. Let $F$ be an outer function. Then there exists $k\left( e^{i\theta} \right)$ an real valued integrable function on $\T$ such that 
+\begin{equation*}
+    F\left( z \right)=\lambda \exp \left[ \frac{1}{2\pi}  \int_{-\pi}^{\pi} \frac{e^{i\theta} + z}{e^{i\theta} - z} k\left( e^{i\theta} \right) d\theta \right].
+\end{equation*}
+We showed earlier that $k\left( e^{i\theta} \right) = f\left( e^{i\theta} \right)$ almost everywhere where $f \in H^{1} \left( \D \right)$ corresponding to $F\in H^{1} \left( \D \right)$.
+
+Hence, we have that 
+
+\begin{equation*}
+    F\left( z \right)=\lambda \exp \left[ \frac{1}{2\pi}  \int_{-\pi}^{\pi} \frac{e^{i\theta} + z}{e^{i\theta} - z} \log \abs{f\left( e^{i\theta } \right)} d\theta \right].
+\end{equation*}
+
+
 \section{Infinite Products, Blaschke Products \& Singular Functions}
 
 \begin{theorem}
@@ -163,6 +185,34 @@ We now prove a necessary and sufficient condition for the convergence of product
 	\sum_{n=1}^{\infty} \left( 1-\abs{\alpha_{n}} \right) < \infty.
     \end{equation*}
 \end{proof}
+
+Conversely, suppose that $\sum_{n=1}^{\infty} \left( 1-\abs{\alpha_{n}} \right) < \infty$ is satisfied. We show that the partial product $B_{n}$ converges in $H^{2} \left( \T \right)$. Consider the following:
+\begin{align*}
+    \frac{1}{2\pi} \int_{-\pi}^{\pi} \abs{B_{m} - B_{n}}^{2} &= \frac{1}{2\pi} \int_{-\pi}^{\pi} \left[ \abs{B_{m}}^{2} + \abs{B_{n}}^{2} - 2 \Re (B_{n}\bar{B_{m}}) \right] d\theta & \\
+    &= 2 \left[ 1 - \Re \frac{1}{2\pi} \int_{-\pi}^{\pi} \frac{B_{n}}{B_{m}} d\theta \right] & \left( \abs{B_{m}}^{2} = 1 \text{ and } \bar{B_{m}} = \frac{1}{B_{m}} \right) 
+\end{align*}
+
+Now if $n>m$ we have that 
+\begin{equation*}
+    \frac{B_{n}}{B_{m}}
+\end{equation*}
+is analytic and we have that
+\begin{align*}
+    \frac{1}{2\pi} \int_{-\pi}^{\pi} \frac{B_{n}}{B_{m}} d\theta &= \frac{B_n}{B_m} \left( 0 \right) & \text{(by Mean Value Theorem)} \\
+    &= \prod_{k=m+1}^{n} \abs{\alpha_{k}} &
+\end{align*}
+Thus, we have that
+\begin{equation*}
+    \frac{1}{2\pi} \int_{-\pi}^{\pi} \abs{B_{m}-B_{n}}^{2} d\theta = 2\left( 1- \prod_{k=m+1}^{n} \abs{\alpha_{k}} \right)
+\end{equation*}
+
+Since the infinite product $\prod \abs{\alpha_{k}}$ converges, we have that $B_{n} \to B$ in $H^{2}$.
+
+Thus, we have that $B_{n}$ converges to $B$ on the compact subsets of the discs by using the $L^2$ convergence on the boundary. 
+
+Also, convergence in $L^{2}$ implies convergence in $L^{1}$ and convergence in $L^{1}$ implies pointwise convergence, hence, we have that $B$ has modulus $1$ almost everywhere on $\T$.
+
+This shows that the Blaschke product is an inner function provided it satisfies the Blaschke condition.
 
 \begin{definition}[Blaschke product]
     A Blaschke product is an analytic function of the form
@@ -229,7 +279,7 @@ We now prove a necessary and sufficient condition for the convergence of product
     \label{thm:BSF}
 \end{theorem}
 \begin{proof}
-    Since $f \ne 0$ and is in $H^{1}$, we have that $f=gF$ for some inner function $g$ and outer function $F$. We know that this factorization is unique up to constant multiple of modulus $1$. If $B$ is the Blaschke product formed from the zeroes of $g$ (that is, the zeroes of $f$) then $g=BS$, where $S$is an inner function without zeroes. By multiplying $g$ by a constant of modulus $1$, we can arrange that so that $S\left( 0 \right) > 0$, that is a singular function. WE can absorb that into the outer function $F$ and we are done.
+    Since $f \ne 0$ and is in $H^{1}$, we have that $f=gF$ for some inner function $g$ and outer function $F$. We know that this factorization is unique up to constant multiple of modulus $1$. If $B$ is the Blaschke product formed from the zeroes of $g$ (that is, the zeroes of $f$) then $g=BS$, where $S$is an inner function without zeroes. By multiplying $g$ by a constant of modulus $1$, we can arrange that so that $S\left( 0 \right) > 0$, that is a singular function. We can adjust that into the outer function $F$ and we are done.
 \end{proof}
 
 \subsection{Final Description of the Factorization}
@@ -283,7 +333,7 @@ We can deduce a generalised Jensen formula from this factorisation. If $f\left( 
 	\leadsto \abs{1-f_{n}(z)} &\le \frac{1-\abs{\alpha_{n}}}{\abs{\alpha_{n}}} \left[ \frac{2}{M} + 1 \right]
     \end{align*}
 
-    Since the sequence $\left( \alpha_{n} \right)$ satisfies the Blaschke condition, we have that $\sum_{n} \left( 1- \abs{\alpha_{n}} \right)$ converges and as s a consequence we have that $\sum \abs{1-f_{n}\left( z \right)}$ is uniformly summable and hence the product $\prod_{n} f_{n} \left( z \right)$ is uniformly and absolutely convergent on the closed sets disjoint from $K$. This shows that the Blaschke product $B\left( z \right)$ is analytic off $K$. \footnote{See Theorem 6.1.7 in Ash \& Novinger's Complex Variables.} 
+    Since the sequence $\left( \alpha_{n} \right)$ satisfies the Blaschke condition, we have that $\sum_{n} \left( 1- \abs{\alpha_{n}} \right)$ converges and as s a consequence we have that $\sum \abs{1-f_{n}\left( z \right)}$ is uniformly summable and hence the product $\prod_{n} f_{n} \left( z \right)$ is uniformly and absolutely convergent on the closed sets disjoint from $K$. This shows that the Blaschke product $B\left( z \right)$ is analytic off $K$. \footnote{This relies on notions of infinite product. For a proof of this fact, we ask the reader to look at Theorem 6.1.7 in \cite{ash2014complex} or \cite{rudin1987real}}. 
 \end{proof}
 
 Before we go on the next theorem, we make the following definition:
@@ -303,9 +353,8 @@ Before we go on the next theorem, we make the following definition:
     for each $z\in \C$. Then we have that $S$ is analytic in $\C \setminus \operatorname{supp} \left( \mu \right)$. Also, the function $S$ (or even $\abs{S}$) is not continuously extendable from the interior of the disc to any point in $\operatorname{supp} \left( \mu \right)$.
     \label{thm:analyticity-of-singular-functions}
 \end{theorem}
-\begin{proof}
-    Let $\mu$ be a finite positive measure on $\T$.
-\end{proof}
+
+Since the proof of this is no longer relevant to our discussion, we refer the reader to see \cite{garnett2007bounded} or \cite{hoffman2007banach}.
 
 
 \section{Two theorems due to Hardy}
@@ -323,7 +372,7 @@ Before we prove the theorems due to Hardy and an another one which due to Haryd 
     \label{lem:h1-factored-h2}
 \end{theorem}
 \begin{proof}
-    By Theorem \ref{thm:factor-bounded-function}, $F$ can be factored into $F=B \Phi$ where $B$ is a Blaschke product and $\Phi \in H^{1} \left( \D \right)$ is free of zeroes on $\D$ with $\norm{\Phi}_{1} = \norm{F}_{1}$. Since $\Phi$ is zerofree on $\D$, it must have an analytic square root. \footnote{For a proof of this fact, see Complex Variables by Ash and Novinger.} Let 
+    By Theorem \ref{thm:factor-bounded-function}, $F$ can be factored into $F=B \Phi$ where $B$ is a Blaschke product and $\Phi \in H^{1} \left( \D \right)$ is free of zeroes on $\D$ with $\norm{\Phi}_{1} = \norm{F}_{1}$. Since $\Phi$ is zerofree on $\D$, it must have an analytic square root (A proof of this can be found in \cite{ash2014complex}). Let 
     \begin{align*}
 	G=B\Phi ^{1/2} \text{ and } K= \Phi ^{1/2}.
     \end{align*}

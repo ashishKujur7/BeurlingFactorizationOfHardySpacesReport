@@ -1,0 +1,4 @@
+pdflatex mastersThesisDraft.tex
+biber mastersThesisDraft
+pdflatex mastersThesisDraft.tex
+pdflatex mastersThesisDraft.tex

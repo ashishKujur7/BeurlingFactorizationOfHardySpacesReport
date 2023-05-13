@@ -1,14 +1,15 @@
-\documentclass[12pt,twoside]{report}
+\documentclass[12pt]{report}
 \usepackage[headheight=15pt]{geometry}
 \usepackage{amsfonts, amsmath}
 \usepackage[T1]{fontenc}
 \usepackage{mathrsfs, enumitem}
 \usepackage{hyperref}
-\usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{tikz-cd}
 \usepackage{color}
 \usepackage{hyperref}
 \usepackage{csquotes}
@@ -19,7 +20,10 @@
 \usepackage{setspace}
 \onehalfspacing
 
-\newtheorem{theorem}{Theorem}[subsection]
+\usepackage[backend=biber,style=alphabetic]{biblatex}
+\addbibresource{bib.bib}
+
+\newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{claim}[theorem]{Claim}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -33,7 +37,7 @@
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
-\numberwithin{equation}{subsection}
+\numberwithin{equation}{section}
 
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
@@ -139,8 +143,6 @@
 \newcommand{\calY}{{\cal Y}}
 \newcommand{\calZ}{{\cal Z}}
 
-% proof
-\renewcommand{\qedsymbol}{$\ddot\smile$}
 
 
 % bold letters (useful for random variables)
@@ -236,7 +238,6 @@
     \fancyfoot{} %clear all footers
     \fancyhead[CO]{\textsc{\leftmark}} %How to insert the Chapter names like "MyChapter"?
     \fancyfoot[C]{\thepage}
-    \fancyhead[CE]{\textsc{Ashish Kujur}}
     \renewcommand{\headrulewidth}{0.4pt}
     \renewcommand{\footrulewidth}{0.0pt}
 }
@@ -253,8 +254,24 @@
 
 
 \begin{document}
-\maketitle \tableofcontents
+\input{01_TitlePage}
+
+\shipout\null
+
+\input{02_Declaration}
+
+% Switch from 03a_Certificate to 03b_Certificate for a fancier format.
+\input{03a_Certificate}
+% \input{00_Intro_Pages/03b_Certificate}
+
+\input{04_Acknowledgements}
+\input{06_ToC,LoF,LoT}
+%\tableofcontents
+\setcounter{page}{1}
 \include{analytic-harmonic.tex}
 \include{h1.tex}
 \include{factorizationForHpFunctions.tex}
+\nocite{*}
+\printbibliography[heading=bibintoc,title=References]
+\thispagestyle{empty}
 \end{document}

@@ -1,16 +1,91 @@
 \chapter{Analytic and Harmonic Functions}
-\section{The Cauchy and Poisson Kernels}
+Let us begin by fixing the notation for the rest of the report. The \textit{open unit disc} will be denoted by $\D$ and is defined to the subset of the complex plane of those elements whose absolute value is less than $1$. That is,
+\begin{equation*}
+    \D = \left\{ z \in \C : \abs{z} < 1 \right\}.
+\end{equation*}
+The boundary of the open unit disc, called, the \textit{unit circle} is denotes by $\T$. That is, 
+\begin{equation*}
+    \T = \left\{ z \in \C : \abs{z} = 1 \right\}.
+\end{equation*}
+
+We will assume that the the unit circle has the normalised Lebesgue measure. The set of all complex measures denoted by $\calM \left( \T \right)$ is a Banach space with total variation norm. For a proof of this fact, we advise the reader to refer \cite{cohn2013measure}, \cite{axler2020measure} and \cite{rudin1987real}.
+
+As usual, $\Omega$ will denote an open connected subset of $\C$. We will say that a function $U : \Omega \to \C$ is \textit{harmonic} on $\Omega$ if it satisfies the Laplace equation
+\begin{equation*}
+    \triangledown ^{2} U = \frac{\partial ^{2} U}{\partial x^{2}} + \frac{\partial ^{2} U}{\partial y^{2}} =0
+\end{equation*}
+for each point in $\Omega$.
+
+
+Before we proceed, recall a basic fact from complex analysis which states that a real valued function on $\D$ is harmonic iff it is the real part an analytic function.
+
+\section{The Poisson Kernel}
+The famous Dirchlet problem asks the following:
+
+
+Given $G \subset \R ^{2}$ and $f: \partial G \to \C$ and $f: \partial G \to \C$. Find a continuous function $u: \overline{G} \to \C$ such that $u\mid _{G}$  is harmonic and $u\mid_{\partial G} =f$.
+
+To solve the above problem, we make the following definition:
+
+\begin{definition}
+    For each $0\le r < 1$, we define $P_r : \T \to \C$ by
+    \begin{equation*}
+	P_{r} \left( e^{it} \right) = \frac{1-r^{2}}{1+r^{2}-2r\cos t}
+    \end{equation*}
+    for each $e^{it} \in \T$.
+    The family of functions $\left\{ P_{r} \right\}_{r\in [0,1)}$ is called the \textit{Poisson kernel} on the open unit disc $\D$.
+    \label{def:Poisson-kernel}
+\end{definition}
+
+It can be shown that that for each $r<1$, we have that 
+\begin{equation*}
+    P_{r}\left( e^{it} \right) = \sum_{n=-\infty}^{\infty} r^{\abs{n}}e^{int}
+\end{equation*}
+holds for each $e^{it} \in \T$.
+
+We will soon see that if $u \in \calC \left( \T \right)$, that is, continuous on $\T$, the so called "Poisson integral" of $u$ solves the Dirichlet problem. We postpone this work to the next section. However the following proposition may lead the reader to believe why this may be true:
 \begin{proposition}
-    Let $u: \overline{\D} \to \C$ be a harmonic function. Then we have that
+    Let $u: \overline{\D} \to \C$ be a harmonic function, this means, that $u$ is harmonic in an open subset containing $\overline{D}$. Then we have that
     \begin{equation}
 	u\left( re^{i\theta} \right) = \frac{1}{2\pi} \int_{-\pi}^{\pi} u\left( e^{it} \right) P_{r} \left( e^{i\left( \theta -t \right)} \right) dt
     \end{equation}
     \label{prop:poisson-integral-formula-for-harmonic-function}
 \end{proposition}
 
+Albeit the proof of this proposition is not too hard, we ask the reader to seek a proof of this fact in \cite{hoffman2007banach}.
+
 \section{Boundary Values}
-\subsection{Weak* convergence of measures}
-\begin{theorem}
+
+The Poisson kernel is an "approximate identity". We just deal with the approximate identities on the circle:
+
+\begin{definition}
+    Let $\varphi_{i}$ be a subset of $L^{1} \left( \T \right)$ where $i$ varies over a directed set. We say that $\left\{ \varphi_{i} \right\}$ is an approximate identity on $\T$ if the following are satisfied:
+    \begin{enumerate}
+	\item for all $i$,
+	    \begin{equation*}
+		\frac{1}{2\pi} \int_{-\pi}^{\pi} \varphi_{i} \left( e^{it} \right) dt =1
+	    \end{equation*}
+	\item
+	    \begin{equation*}
+		C_{\varphi} = \sup_{i} \left( \frac{1}{2\pi} \int_{-\pi}^{\pi} \abs{\varphi_{i} \left( e^{it} \right)dt} \right) \le \infty
+	    \end{equation*}
+	\item for each fixed $\delta$, $0<\delta<\pi$, 
+	    \begin{equation*}
+		\lim_{i} \int_{\delta \le \abs{t} \le \pi} \abs{\varphi_{i} \left( e^{it} \right)} dt = 0.
+	    \end{equation*}
+    \end{enumerate}
+    A family of approximate identity on $\T$ is called \textit{positive approximate identity} if all the function are positively valued, that is, 
+    \begin{equation*}
+	\varphi_{i}\left( e^{it} \right) \ge 0
+    \end{equation*}
+    for each $i$.
+\end{definition}
+As mentioned, the Poisson kernel is an example of approximate identity.The other well known approximate identity is Fejer's kernel on $\T$ which is essential in theory of convergence of Fourier series on $\T$. We refer the reader to \cite{katznelson2004introduction}.
+
+
+The aforementioned theorems are esssential to the studying the interaction of $\D$ and the $\T$. We ask the reader to see \cite{mashreghi2009representation} for proofs for the sake of brevity. Although these theorems are done more generally, we really only care about the special case of the Poisson kernel.
+
+\begin{theorem}[Weak* convergence of measures]
     Let $\left\{ \varphi _{i} \right\}_{i}$ be an approximate identity on $\T$ and let $\mu \in \calM \left( \T \right)$. Then for all $i$, $\varphi_{i} * \mu  \in L^{1} \left( \T \right)$ with
     \begin{equation*}
 	\norm{\varphi _{i} * \mu}_{1} \le C_{\varphi} \lVert \mu \rVert
@@ -26,9 +101,7 @@
     for all $f \in \calC \left( \T \right)$.
     \label{thm:weak-star-measures}
 \end{theorem}
-
-\subsection{Convergence in norm}
-\begin{theorem}
+\begin{theorem}[Convergence in norm]
     Let $\left\{ \varphi _{i} \right\}_{i}$ be an approximate identity on $\T$ and let $f \in L^{p} \left( \T \right)$ with $p \in [1, \infty)$. Then for all $i$, $\varphi_{i} * f  \in L^{p} \left( \T \right)$ with
     \begin{equation*}
 	\norm{\varphi _{i} * f}_{p} \le C_{\varphi} \lVert f \rVert _{p}
@@ -41,8 +114,7 @@
 \end{theorem}
 
 
-\subsection{Weak* convergence of bounded functions}
-\begin{theorem}
+\begin{theorem}[Weak* convergence of bounded functions]
     Let $\left\{ \varphi _{i} \right\}_{i}$ be an approximate identity on $\T$ and let $f\in L^{\infty} \left( \T \right)$. Then for all $i$, $\varphi_{i} * \mu  \in \calC \left( \T \right)$ with
     \begin{equation*}
 	\norm{\varphi _{i} * \mu}_{\infty} \le C_{\varphi} \lVert \mu \rVert _{\infty}
@@ -59,7 +131,7 @@
     \label{thm:weak-star-infinity}
 \end{theorem}
 
-\subsection{The entire picture!}
+\subsection{The specific case of Poisson Integral}
 
 \begin{definition}[Poisson integral of some function or measure]
     Let $\tilde{f} : \D \to \C$ be a harmonic function. Then $\tilde{f}$ is said to be the \textit{Poisson integral} of the function $f : \T \to \C$ if
@@ -74,7 +146,8 @@
     \label{def:Poisson-Integral-Of-Some-Function-Or-Measure}
 \end{definition}
 
-\begin{theorem}[Ultimate Convergence]
+This follows immediately by noticing that the family of Poisson kernel is indeed an approximate identity. 
+\begin{theorem}
     Let $f : \D \to \C$ be a harmonic function. Define for each $r\in [0,1)$, the function $f_{r} : \T \to \C$ by
     \begin{equation*}
 	f_{r} \left( e^{i\theta} \right) = f\left( re^{i\theta} \right)
@@ -89,7 +162,9 @@
 \end{theorem}
 \section{Fatou's Theorem}
 
-\begin{theorem}
+The next theorem requires the reader to know what derivative of measures are. The reader can get review of these concepts in \cite{rudin1987real} and \cite{cohn2013measure}.
+
+\begin{theorem}[Fatou (1905)]
     Let $\mu$ be a complex measure on the unit circle $\T$, and let $f: \D \to \C$ be the harmonic function defined by
     \begin{align*}
 	f(re^{i\theta}) = \frac{1}{2\pi} \int_{\T} P_{r} \left( e^{i\left( \theta-t \right)} \right) d\mu \left( e^{it} \right)
@@ -103,19 +178,44 @@
     \label{thm:Fatou-1906}
 \end{theorem}
 
+A proof of the above theorem is quite technical and can be found in \cite{koosis1998introduction}, \cite{hoffman2007banach} and \cite{axler2013harmonic}.
+
 \begin{corollary}
     Let $\mu$ be a complex measure on $\T$. Then $P[\mu]$ has nontangential limits equal everywhere to the Radon Nikodym derivative of $\mu$ with respect to the normalised Lebesgue measure.
 \end{corollary}
+\begin{proof}
+    Let $\mu$ be a complex measure on the unit circle. Then by LebesgueDecomposition Theorem, we have that
+
+    \begin{equation*}
+	d\mu = \frac{1}{f} dt + d\mu_{s}
+    \end{equation*}
+    where $d\mu_{s}$ is a singular measure. 
+    Since $\mu$ is a complex measure, hence, its real and imaginary parts are finite measures, we have that $\mu$ is differentiable almost everywhere and we have that
+    \begin{equation*}
+	\frac{d\mu}{dt} = \frac{1}{2\pi}f
+    \end{equation*}
+    almost everywhere.
+
+    Applying Fatou's theorem \ref{thm:Fatou-1906}, this follows immediately.
+\end{proof}
 
 \begin{corollary}
     Let $f : \T \to \C$ be $L^{1}$. Then $P[f]$ has nontangential limits at almost everywhere and these limits equal to $f$ almost everywhere.
     \label{cor:L1-implies-Poisson-limits}
 \end{corollary}
+\begin{proof}
+    This corollary follows immediately by considering the measure on the circle given by
+    \begin{equation*}
+	d\mu = f \frac{dt}{2\pi}
+    \end{equation*}
+    Applying the previous corollary, we are done.
+\end{proof}
 
+The next corollary tells us that if the $p$ norm of $f_{r}$ is uniform bounded as $r$ varies, the $f$ is a Poisson integral of a $L^{p}$ function on the circle or a complex measure on the circle depending upon what $p$ is.
 \begin{corollary}
     Let $f: \D \to \C$ be a harmonic function and $1\le p <\infty$. Suppose that for all $0\le r < 1$, we have that
     \begin{equation*}
-	\norm{f_{r}}_{p} < +\infty
+	\norm{f_{r}}_{p} < M< +\infty
     \end{equation*}
     Then for almost every $\theta$ the radial limits 
     \begin{equation*}
@@ -129,6 +229,9 @@
     \end{enumerate}
     \label{cor:imp-Fatou}
 \end{corollary}
+
+
+
 \begin{proof}
     Suppose that for each $r\in [0,1)$, we have $\norm{f_{r}}_{p} < +\infty$. We need to prove that for almost every $\theta$, $\lim_{r\to 1} f\left( re^{i\theta} \right)$ exists. Then by Theorem \ref{thm:convergence-Poisson}, we have that $f=P[g]$ for some $g\in L^{p} \left( \T \right)$. Since $L^{p} \left( \T \right) \subset L^{1} \left( \T \right)$, we can use the previous corollary. By the previous corollary, we have that $P[g]$ has nontangential limits almost everywhere, we have that
     \begin{equation}
@@ -144,9 +247,12 @@
 \end{proof}
 
 \begin{corollary}
-    Let $f: \D \to \R_{\ge 0}$ be a harmonic function. Then $f$ has nontangential limits at almost every point of $\T$. \textcolor{red}{(Why demand nonnegative?)}
+    Let $f: \D \to \R_{\ge 0}$ be a harmonic function. Then $f$ has nontangential limits at almost every point of $\T$.
     \label{cor:nontangential-limits}
 \end{corollary}
+\begin{proof}
+    The proof just relies on \ref{prop:poisson-integral-formula-for-harmonic-function}.
+\end{proof}
 
 Let $h \left( \D \right)$ denote the set of all harmonic functions on $\D$. Let $p\in [1,\infty]$. Define
 \begin{equation*}
@@ -218,9 +324,28 @@ Let $\left\{ u_{n} \right\}$ be a sequence of functions in the above subspace; s
 \begin{align*}
     \abs{\int_{-\pi}^{\pi} u_{n} \left( e^{it} \right) e^{ikt} dt - \int_{-\pi}^{\pi} u \left( e^{it} \right) e^{ikt} dt } &\le \int_{-\pi}^{\pi} \abs{u_{n} \left( e^{it} \right) - u\left( e^{it} \right)} dt
 \end{align*}
-From the above inequality, it is evident that $u$ is in the subspace mentioned above!
+From the above inequality, it is evident that $u$ is in the subspace mentioned above.
+
+For the above reasons, we will not distinguish between the $H^{p} \left( \D \right)$ and $H^{p}\left( \T \right)$ and simply write $H^{p}\left( \D \right)$. The case $p=1$ needs a special mention. We have not dealt with it yet. We saw that if $f \in H^{1}\left( \D \right)$ then we have that 
+\begin{equation*}
+    f = P[\mu]
+\end{equation*}
+for some complex measure $\mu$. We do not recover a $f\in L^{1} \left( \T \right)$ like the other case. In this case, we know that this measure $\mu$ satisfies the property that
+\begin{equation*}
+    \int_{-\pi}^{\pi} e^{int} dt = 0
+\end{equation*}
+for each $n=1,2,3,\ldots$. In other words, we can say the negative Fourier coefficient of $\mu$ is zero. We will call a such a complex measure to be \textit{analytic}.
+
+In the next chapter, we will see that a theorem due to F and M Riesz says that complex analytic measure is absolutely continuous with respect to the normalised Lebesgue measure. That is, there is a $\tilde{f}\in L^{1} \left( \T \right)$ such that 
+\begin{equation*}
+    d\mu = \tilde{f} \frac{dt}{2\pi}.
+\end{equation*}
+
+In the proof of Theorem \ref{thm:lp-and-hp}, we can send $f$ to $\tilde{f}$ to establish a bijection and we will be done.
 
 \subsubsection{Series Representation of Harmonic Functions}
+
+The proof of the aforementioned theorem is used later and not necessary for our discussion. We refer the reader to \cite{mashreghi2009representation} for a proof.
 
 \begin{theorem}
     Let $U$ be a harmonic on the disc $D_{R} = \left\{ |z| < R \right\}$. Then, for each $n\in \Z$, the quantity

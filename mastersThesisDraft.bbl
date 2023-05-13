@@ -1,0 +1,420 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{axler2013harmonic}{book}{}
+      \name{author}{3}{}{%
+        {{hash=71493eec7caacea528ad39dbfb52773a}{%
+           family={Axler},
+           familyi={A\bibinitperiod},
+           given={Sheldon},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8355c45238073d9fd8ba4a381c981b74}{%
+           family={Bourdon},
+           familyi={B\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=c9017ce7bb848a682b25d53673623910}{%
+           family={Wade},
+           familyi={W\bibinitperiod},
+           given={Ramey},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{5684a3837b02b0d1cde81311722a8eef}
+      \strng{fullhash}{5684a3837b02b0d1cde81311722a8eef}
+      \strng{bibnamehash}{5684a3837b02b0d1cde81311722a8eef}
+      \strng{authorbibnamehash}{5684a3837b02b0d1cde81311722a8eef}
+      \strng{authornamehash}{5684a3837b02b0d1cde81311722a8eef}
+      \strng{authorfullhash}{5684a3837b02b0d1cde81311722a8eef}
+      \field{labelalpha}{ABW13}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Harmonic function theory}
+      \field{volume}{137}
+      \field{year}{2013}
+    \endentry
+    \entry{ash2014complex}{book}{}
+      \name{author}{1}{}{%
+        {{hash=4cc13081ef3f444fd0731693a93840dd}{%
+           family={Ash},
+           familyi={A\bibinitperiod},
+           given={Robert\bibnamedelima B},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Academic Press}%
+      }
+      \strng{namehash}{4cc13081ef3f444fd0731693a93840dd}
+      \strng{fullhash}{4cc13081ef3f444fd0731693a93840dd}
+      \strng{bibnamehash}{4cc13081ef3f444fd0731693a93840dd}
+      \strng{authorbibnamehash}{4cc13081ef3f444fd0731693a93840dd}
+      \strng{authornamehash}{4cc13081ef3f444fd0731693a93840dd}
+      \strng{authorfullhash}{4cc13081ef3f444fd0731693a93840dd}
+      \field{labelalpha}{Ash14}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Complex variables}
+      \field{year}{2014}
+    \endentry
+    \entry{axler2020measure}{book}{}
+      \name{author}{1}{}{%
+        {{hash=71493eec7caacea528ad39dbfb52773a}{%
+           family={Axler},
+           familyi={A\bibinitperiod},
+           given={Sheldon},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature}%
+      }
+      \strng{namehash}{71493eec7caacea528ad39dbfb52773a}
+      \strng{fullhash}{71493eec7caacea528ad39dbfb52773a}
+      \strng{bibnamehash}{71493eec7caacea528ad39dbfb52773a}
+      \strng{authorbibnamehash}{71493eec7caacea528ad39dbfb52773a}
+      \strng{authornamehash}{71493eec7caacea528ad39dbfb52773a}
+      \strng{authorfullhash}{71493eec7caacea528ad39dbfb52773a}
+      \field{labelalpha}{Axl20}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Measure, integration \& real analysis}
+      \field{year}{2020}
+    \endentry
+    \entry{cohn2013measure}{book}{}
+      \name{author}{1}{}{%
+        {{hash=0e18d124f44a7b172b35b12d39c91d04}{%
+           family={Cohn},
+           familyi={C\bibinitperiod},
+           given={Donald\bibnamedelima L},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{0e18d124f44a7b172b35b12d39c91d04}
+      \strng{fullhash}{0e18d124f44a7b172b35b12d39c91d04}
+      \strng{bibnamehash}{0e18d124f44a7b172b35b12d39c91d04}
+      \strng{authorbibnamehash}{0e18d124f44a7b172b35b12d39c91d04}
+      \strng{authornamehash}{0e18d124f44a7b172b35b12d39c91d04}
+      \strng{authorfullhash}{0e18d124f44a7b172b35b12d39c91d04}
+      \field{labelalpha}{Coh13}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Measure theory}
+      \field{volume}{1}
+      \field{year}{2013}
+    \endentry
+    \entry{duren1970theory}{book}{}
+      \name{author}{1}{}{%
+        {{hash=f21f92f7c66cbf1c624e030e5de4e92f}{%
+           family={Duren},
+           familyi={D\bibinitperiod},
+           given={Peter\bibnamedelima L},
+           giveni={P\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Academic press}%
+      }
+      \strng{namehash}{f21f92f7c66cbf1c624e030e5de4e92f}
+      \strng{fullhash}{f21f92f7c66cbf1c624e030e5de4e92f}
+      \strng{bibnamehash}{f21f92f7c66cbf1c624e030e5de4e92f}
+      \strng{authorbibnamehash}{f21f92f7c66cbf1c624e030e5de4e92f}
+      \strng{authornamehash}{f21f92f7c66cbf1c624e030e5de4e92f}
+      \strng{authorfullhash}{f21f92f7c66cbf1c624e030e5de4e92f}
+      \field{labelalpha}{Dur70}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Theory of H p Spaces}
+      \field{year}{1970}
+      \true{nocite}
+    \endentry
+    \entry{fisher1983function}{book}{}
+      \name{author}{1}{}{%
+        {{hash=adb4df8bcb019d63b521a87545521abf}{%
+           family={Fisher},
+           familyi={F\bibinitperiod},
+           given={S.D.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{adb4df8bcb019d63b521a87545521abf}
+      \strng{fullhash}{adb4df8bcb019d63b521a87545521abf}
+      \strng{bibnamehash}{adb4df8bcb019d63b521a87545521abf}
+      \strng{authorbibnamehash}{adb4df8bcb019d63b521a87545521abf}
+      \strng{authornamehash}{adb4df8bcb019d63b521a87545521abf}
+      \strng{authorfullhash}{adb4df8bcb019d63b521a87545521abf}
+      \field{labelalpha}{Fis83}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780471873143}
+      \field{series}{A Wieley-Interscience publication}
+      \field{title}{Function Theory on Planar Domains: A Second Course in Complex Analysis}
+      \field{year}{1983}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://books.google.co.in/books?id=CzxPAQAAIAAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.co.in/books?id=CzxPAQAAIAAJ
+      \endverb
+    \endentry
+    \entry{garnett2007bounded}{book}{}
+      \name{author}{1}{}{%
+        {{hash=8542c50e130b579ee68bfce8d0fec6c1}{%
+           family={Garnett},
+           familyi={G\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{8542c50e130b579ee68bfce8d0fec6c1}
+      \strng{fullhash}{8542c50e130b579ee68bfce8d0fec6c1}
+      \strng{bibnamehash}{8542c50e130b579ee68bfce8d0fec6c1}
+      \strng{authorbibnamehash}{8542c50e130b579ee68bfce8d0fec6c1}
+      \strng{authornamehash}{8542c50e130b579ee68bfce8d0fec6c1}
+      \strng{authorfullhash}{8542c50e130b579ee68bfce8d0fec6c1}
+      \field{labelalpha}{Gar07}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Bounded analytic functions}
+      \field{volume}{236}
+      \field{year}{2007}
+    \endentry
+    \entry{hoffman2007banach}{book}{}
+      \name{author}{1}{}{%
+        {{hash=70bba88d762755f400208620fb79ce6b}{%
+           family={Hoffman},
+           familyi={H\bibinitperiod},
+           given={Kenneth},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Courier Corporation}%
+      }
+      \strng{namehash}{70bba88d762755f400208620fb79ce6b}
+      \strng{fullhash}{70bba88d762755f400208620fb79ce6b}
+      \strng{bibnamehash}{70bba88d762755f400208620fb79ce6b}
+      \strng{authorbibnamehash}{70bba88d762755f400208620fb79ce6b}
+      \strng{authornamehash}{70bba88d762755f400208620fb79ce6b}
+      \strng{authorfullhash}{70bba88d762755f400208620fb79ce6b}
+      \field{labelalpha}{Hof07}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Banach spaces of analytic functions}
+      \field{year}{2007}
+    \endentry
+    \entry{katznelson2004introduction}{book}{}
+      \name{author}{1}{}{%
+        {{hash=e314e572902d5b97bb227768094c1b23}{%
+           family={Katznelson},
+           familyi={K\bibinitperiod},
+           given={Yitzhak},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{e314e572902d5b97bb227768094c1b23}
+      \strng{fullhash}{e314e572902d5b97bb227768094c1b23}
+      \strng{bibnamehash}{e314e572902d5b97bb227768094c1b23}
+      \strng{authorbibnamehash}{e314e572902d5b97bb227768094c1b23}
+      \strng{authornamehash}{e314e572902d5b97bb227768094c1b23}
+      \strng{authorfullhash}{e314e572902d5b97bb227768094c1b23}
+      \field{labelalpha}{Kat04}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{An introduction to harmonic analysis}
+      \field{year}{2004}
+    \endentry
+    \entry{koosis1998introduction}{book}{}
+      \name{author}{1}{}{%
+        {{hash=e50704d4a4fcefb467ec4405e3065dc0}{%
+           family={Koosis},
+           familyi={K\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{e50704d4a4fcefb467ec4405e3065dc0}
+      \strng{fullhash}{e50704d4a4fcefb467ec4405e3065dc0}
+      \strng{bibnamehash}{e50704d4a4fcefb467ec4405e3065dc0}
+      \strng{authorbibnamehash}{e50704d4a4fcefb467ec4405e3065dc0}
+      \strng{authornamehash}{e50704d4a4fcefb467ec4405e3065dc0}
+      \strng{authorfullhash}{e50704d4a4fcefb467ec4405e3065dc0}
+      \field{labelalpha}{Koo98}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{115}
+      \field{title}{Introduction to Hp spaces}
+      \field{year}{1998}
+    \endentry
+    \entry{katzourakis2018illustrative}{book}{}
+      \name{author}{2}{}{%
+        {{hash=115fc6d42a99e3d832e33fe05937d936}{%
+           family={Katzourakis},
+           familyi={K\bibinitperiod},
+           given={Nikolaos},
+           giveni={N\bibinitperiod}}}%
+        {{hash=05f32029a14063ab32779067d14964ac}{%
+           family={Varvaruca},
+           familyi={V\bibinitperiod},
+           given={Eugen},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{6cdabfa6c0f75c677af574affb0e7fe4}
+      \strng{fullhash}{6cdabfa6c0f75c677af574affb0e7fe4}
+      \strng{bibnamehash}{6cdabfa6c0f75c677af574affb0e7fe4}
+      \strng{authorbibnamehash}{6cdabfa6c0f75c677af574affb0e7fe4}
+      \strng{authornamehash}{6cdabfa6c0f75c677af574affb0e7fe4}
+      \strng{authorfullhash}{6cdabfa6c0f75c677af574affb0e7fe4}
+      \field{labelalpha}{KV18}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{An Illustrative Introduction to Modern Analysis}
+      \field{year}{2018}
+      \true{nocite}
+    \endentry
+    \entry{mashreghi2009representation}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ae4a619de9fab7620b9bfb1f9be1cc49}{%
+           family={Mashreghi},
+           familyi={M\bibinitperiod},
+           given={Javad},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{ae4a619de9fab7620b9bfb1f9be1cc49}
+      \strng{fullhash}{ae4a619de9fab7620b9bfb1f9be1cc49}
+      \strng{bibnamehash}{ae4a619de9fab7620b9bfb1f9be1cc49}
+      \strng{authorbibnamehash}{ae4a619de9fab7620b9bfb1f9be1cc49}
+      \strng{authornamehash}{ae4a619de9fab7620b9bfb1f9be1cc49}
+      \strng{authorfullhash}{ae4a619de9fab7620b9bfb1f9be1cc49}
+      \field{labelalpha}{Mas09}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Representation theorems in Hardy spaces}
+      \field{volume}{74}
+      \field{year}{2009}
+    \endentry
+    \entry{rudin1987real}{book}{}
+      \name{author}{1}{}{%
+        {{hash=8329fd8ba090a7e7a171898a3b3c11fd}{%
+           family={Rudin},
+           familyi={R\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {McGraw-Hill}%
+      }
+      \strng{namehash}{8329fd8ba090a7e7a171898a3b3c11fd}
+      \strng{fullhash}{8329fd8ba090a7e7a171898a3b3c11fd}
+      \strng{bibnamehash}{8329fd8ba090a7e7a171898a3b3c11fd}
+      \strng{authorbibnamehash}{8329fd8ba090a7e7a171898a3b3c11fd}
+      \strng{authornamehash}{8329fd8ba090a7e7a171898a3b3c11fd}
+      \strng{authorfullhash}{8329fd8ba090a7e7a171898a3b3c11fd}
+      \field{labelalpha}{Rud87}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780071002769}
+      \field{series}{Mathematics series}
+      \field{title}{Real and Complex Analysis}
+      \field{year}{1987}
+      \verb{urlraw}
+      \verb https://books.google.co.in/books?id=NmW7QgAACAAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.co.in/books?id=NmW7QgAACAAJ
+      \endverb
+    \endentry
+    \entry{rynne2007linear}{book}{}
+      \name{author}{2}{}{%
+        {{hash=29c175263705f750c8501bb7281e05f6}{%
+           family={Rynne},
+           familyi={R\bibinitperiod},
+           given={Bryan},
+           giveni={B\bibinitperiod}}}%
+        {{hash=915f63e2f0381c7e8cee07095a59a478}{%
+           family={Youngson},
+           familyi={Y\bibinitperiod},
+           given={Martin\bibnamedelima A},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{1a662967a8c3e49a11c89967a6f3fb1a}
+      \strng{fullhash}{1a662967a8c3e49a11c89967a6f3fb1a}
+      \strng{bibnamehash}{1a662967a8c3e49a11c89967a6f3fb1a}
+      \strng{authorbibnamehash}{1a662967a8c3e49a11c89967a6f3fb1a}
+      \strng{authornamehash}{1a662967a8c3e49a11c89967a6f3fb1a}
+      \strng{authorfullhash}{1a662967a8c3e49a11c89967a6f3fb1a}
+      \field{labelalpha}{RY07}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Linear functional analysis}
+      \field{year}{2007}
+      \true{nocite}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

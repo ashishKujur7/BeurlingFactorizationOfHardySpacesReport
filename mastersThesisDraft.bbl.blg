@@ -1,0 +1,5 @@
+[0] Config.pm:306> INFO - This is Biber 2.18
+[0] Config.pm:309> INFO - Logfile is 'mastersThesisDraft.bbl.blg'
+[110] biber:340> INFO - === Fri May 12, 2023, 15:52:21
+[298] Utils.pm:399> ERROR - Cannot find 'mastersThesisDraft.bbl.bcf'!
+[299] Biber.pm:135> INFO - ERRORS: 1

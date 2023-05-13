@@ -1,6 +1,5 @@
 \chapter{The space \texorpdfstring{$H^1$}{\text{H1}}}
-
-\section{Brief Recap!}
+We use the following theorem several times in this chapter. We mention it here again for reference:
 \begin{theorem}
     Let $u : \overline{\D} \to \C$ be a harmonic function. Then we have that
     \begin{equation*}
@@ -8,6 +7,12 @@
     \end{equation*}
     \label{thm:Poisson-Integral-Formula}
 \end{theorem}
+
+With this, we proceed to prove the F and M Riesz theorem and the Szego's theorem. The former helps us establish an isometry between $H^{1}\left( \D \right)$ and latter talks about the integrability of
+\begin{equation*}
+    \log |F|
+\end{equation*}
+where $|F|$ is a $H^{1}$ function on the $\T$. The integrability of $\log \abs{F}$ will help us characterise all "outer functions" but more on that in the later chapter. Like the $L^{p}$ spaces, $H^{1}$ contains all the other $H^{p}$ spaces for $p>1$ and in the final section of this chapter, we study more properties of $H^{1}$ functions.
 
 \section{The Helson-Lowdenslager Approach}
 Let $\calC \left( \overline {\D} \right)$ be the set of all continuous functions on $\overline{\D}$ and let $H\left( \D \right)$ be the set of all holomorphic functions on the open disc $\D$. We define $\calA =\calC \left( \overline{ \D } \right) \cap H \left( \D \right)$.
@@ -20,7 +25,9 @@ We recall Morera's Theorem for analytic functions at this point:
     \label{thm:morera-analytic}
 \end{theorem}
 
-We use this theorem to prove what we want to prove. Now, let $C$ be any closed curve in $\D$. Then for any $n\in \mathbb N$,
+A proof of Morera's theorem can be found in any text in Complex Analysis. For instance the reader may refer \cite{ash2014complex} or \cite{rudin1987real} for a proof whose statements of which are stated in more or less in a similar fashion.
+
+We use the Morera theorem to prove what we want to prove. Now, let $C$ be any closed curve in $\D$. Then for any $n\in \mathbb N$,
 \begin{align*}
 \oint_{C}f_{n}  \left( z \right) dz = 0
 \end{align*}
@@ -28,7 +35,7 @@ So,
 \begin{align*}
     \oint_{C} f(z) dz = \oint_{C} \lim_{n\to \infty} f_{n} \left( z \right) dz = \lim_{n\to \infty} \oint_{C} f_{n} \left( z \right) dz =0
 \end{align*}
-Since $C$ was arbitrary, $f$ must be holomorphic. This shows that $\calA$ is uniformly closed. The fact that it is an algebra is easy to check $\checkmark$.
+Since $C$ was arbitrary, $f$ must be holomorphic. This shows that $\calA$ is uniformly closed. The fact that it is an algebra is easy to check.
 
 Now, note that since $\D$ is a compact metric space, we have that $\calC \left( \D \right)$ is a complete metric space with supremum metric. Since the supremum metric can also be induced by a norm, namely the supremum norm, we have that $\calC\left( \D \right)$ is a Banach space with the supremum  norm.
 
@@ -158,7 +165,7 @@ Hence, it follows that
 for every $f\in \calA$.
 Now, if $g\in \calC \left( \T, \R \right)$ then by the first part of this theorem, there is a sequence $\left\{ f_{n} \right\} \in \calA$ such that $\Re \left( f_{n} \right) $ converges to $g$ uniformly. By the Dominated Convergence Theorem (which holds, thanks to Jordan Decomposition Theorem), we have that $\int_{\T} g \, d\mu = 0$. 
 
-Now to prove that every $\mu = 0$, it suffices to show that $\hat{\mu} \left( n \right) = 0$ for every $n\in \Z$\footnote{See Page 41, Corollary 2.3 of Mashreghi.}. Now, notice that for any $n\in \Z$, we have
+Now to prove that every $\mu = 0$, it suffices to show that $\hat{\mu} \left( n \right) = 0$ for every $n\in \Z$. For a proof of this fact, we refer the reader to take a look at \cite{mashreghi2009representation} or \cite{katznelson2004introduction}. Now, notice that for any $n\in \Z$, we have
 \begin{align*}
     \hat{\mu} (n) &= \int_{\T} e^{-int} d\mu \left( e^{it} \right) \\
     &=  \int_{\T} \left(\cos \left( nt \right) - i \sin \left( nt \right) \right) d\mu \left( e^{it} \right) \\
@@ -246,7 +253,7 @@ Note that this $F$ is the orthogonal projection of $1$ into the closed subspace 
     \begin{equation*}
 	\int_{\T} d\nu = 0 \leadsto \int_{\T} \abs{1-F}^{2} d\mu = 0
     \end{equation*}
-    Hence, we have that $F=1$ $\mu$-almost everywhere\footnote{See Corollary 2.3.12 of Cohn's Measure Theory.}. But then we have that $1\in S$ which contradicts our assumption. Hence $k \ne 0$.
+    Hence, we have that $F=1$ $\mu$-almost everywhere\footnote{See Corollary 2.3.12 of \cite{cohn2013measure}.}. But then we have that $1\in S$ which contradicts our assumption. Hence $k \ne 0$.
 \item Observe that part 1 of the theorem tells us that 
     \begin{equation*}
 	\abs{1-F}^{2} d\mu = k\, d\lambda \text{ where } k \ne 0
@@ -343,7 +350,7 @@ The last line follows from the fact that $1-F \perp f$ for any $f\in \calA_{0}$.
    \end{equation*}
    where $\abs{\mu_{s}}$ is the variation measure of the complex measure $\mu_{s}$, the singular part of $\mu$.
 
-   We show that $\rho$ is an finite positive measure satisfying properties as in items 1 and 2 above. First, we show that $\rho$ is a finite positive measure. But before that note that the variation measure of any complex measure is  a finite measure.\footnote{See Cohn's Measure Theory -- Proposition 4.1.7}. Now, consider the following:
+   We show that $\rho$ is an finite positive measure satisfying properties as in items 1 and 2 above. First, we show that $\rho$ is a finite positive measure. But before that note that the variation measure of any complex measure is  a finite measure. For a proof of the aforementioned fact, we advice the reader to see \cite{cohn2013measure}. Now, consider the following:
    \begin{align*}
        \rho\left( \T \right) &= \int_{\T} d\rho \\
        &= \int_{\T} \left( 1+ \abs{h} \right) \frac{d\theta}{2\pi} + \int_{\T} d\abs{\mu_{s}}  & \text{by definition} \\
@@ -361,7 +368,9 @@ The last line follows from the fact that $1-F \perp f$ for any $f\in \calA_{0}$.
        &\le \int_{A} \left( 1+\abs{h}  \right)\frac{d\theta}{2\pi} \\
        &= 0
    \end{align*}
-   Since $\abs{\mu (A)} \le \abs{\mu_{a}} (A)$, we have that $\mu_{a} \left( A \right) = 0$. Also, it follows by the definition of the variation measure that $\mu_s \left( A \right) = 0$. Hence, we have that $\mu $ is absolutely continuous with respect to $\rho$. Now, we need to show that $\frac{d\mu}{d\rho}$ is bounded. \textcolor{red}{Needs work!}
+   Since $\abs{\mu (A)} \le \abs{\mu_{a}} (A)$, we have that $\mu_{a} \left( A \right) = 0$. Also, it follows by the definition of the variation measure that $\mu_s \left( A \right) = 0$. Hence, we have that $\mu $ is absolutely continuous with respect to $\rho$. Now, we need to show that $\frac{d\mu}{d\rho}$ is bounded.
+
+
 We proceed to show that item 2 holds. Observe that
 \begin{align*}
     \frac{d\rho}{d\theta} = \left( 1+\abs{h} \right) \frac{1}{2\pi} \ge \frac{1}{2\pi}
@@ -544,8 +553,38 @@ First observe that $\log h \le h$ (this follows by definition of $\log$) and hen
     \end{equation*}
     \label{thm:szego-kolmogoroff-krein}
 \end{theorem}
+Most of the work to prove this theorem has already been done. We relegate it to the references. For a proof of this, the reader may take a look at \cite{hoffman2007banach}.
 
 \section{Completing the Discussion of \texorpdfstring{$H^1$}{\text{H1}}}
+
+Let $F\in H^{1} \left( \D \right)$. We showed in Chapter $1$ that $F$ is a Poisson integral of a complex measure. That is,
+\begin{equation*}
+    F=P\left[ \mu \right]
+\end{equation*}
+for some $\mu \in \calM \left( \T \right)$. Furthermore, we showed that the measures
+$d\mu_{r} = \frac{1}{2\pi} F_{r} dt$ converge to $d\mu$ in the weak* topology of measures.
+
+As promised earlier, we have shown that an analytic measure $\mu$ is absolutely continuous that 
+\begin{equation*}
+    d\mu = \frac{1}{2\pi} \tilde{f} dt
+\end{equation*}
+for some $f\in L^{1} \left( \T \right)$.
+
+By the previous paragraph, we have that $F_{r}$ converges to $f$ in $L^{1}$ and we have that 
+\begin{equation*}
+    \tilde{f} \left( e^{i\theta} \right) = \lim_{z\to e^{i\theta}} f\left( z \right)
+\end{equation*}
+exists for almost all $e^{i\theta} \in \T$. Thus, we may identity this boundary function $\tilde {f} \in H^{1} \left( \T \right)$ with $F\in H^{1} \left( \D \right)$.
+
+The proof of the following theorem relies on Szego's theorem. We state the theorem with proof and the proof of the theorem can be found in \cite{hoffman2007banach}.
+
+\begin{theorem}
+    Let $f\in H^{1} \left( \T \right)$ be nonzero then the function $\log \abs{f\left( e^{i\theta} \right)}$ is integrable and we have that 
+    \begin{equation*}
+	\frac{1}{2\pi} \int_{\T} \log \abs{f} d\theta \ge \log \abs{f\left( e^{i0} \right)}.
+    \end{equation*}
+    \label{thm:szego-integrable-h1}
+\end{theorem}
 
 \begin{corollary}
     If $f \in H^{1} \left( \T \right)$, $f$ cannot vanish on a set of positive Lebesgue measure unless $f \equiv 0$ on $\T$
