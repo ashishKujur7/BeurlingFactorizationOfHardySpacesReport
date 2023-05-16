@@ -1,3 +1,4 @@
-This is evolving to be my masters thesis on "Inner Outer Factorization of Hardy Spaces". I am reading the book [Banach Spaces of Analytic Functions](https://www.maa.org/press/maa-reviews/banach-spaces-of-analytic-functions) by [Kenneth Hoffman](https://math.mit.edu/about/history/obituaries/hoffman.php) under the supervision of [Dr. Md. Ramiz Reza](https://iisertvm.ac.in/faculty/ramiz).
+# Beurling Factorization of Hardy Spaces
+Hello! This is my masters report for my MSc in Mathematics. I studied [Hardy spaces on the disk and the circle](https://en.wikipedia.org/wiki/Hardy_space) and the Beurling Factorization of Hardy spaces. My masters' advisor was [Dr. Md. Ramiz Reza](https://www.iisertvm.ac.in/faculty/ramiz/personal-information).
 
-[See here for the current version!](https://raw.githubusercontent.com/ashishKujur7/BanachSpacesOfAnalyticFunctions/main/main.pdf)
+Here's [the final report](https://github.com/ashishKujur7/HardySpaces/blob/main/mastersThesisDraft.pdf).
