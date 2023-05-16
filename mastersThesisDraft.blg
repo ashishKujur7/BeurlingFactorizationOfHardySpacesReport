@@ -1,15 +1,15 @@
 [0] Config.pm:306> INFO - This is Biber 2.18
 [0] Config.pm:309> INFO - Logfile is 'mastersThesisDraft.blg'
-[116] biber:340> INFO - === Sat May 13, 2023, 09:26:18
-[151] Biber.pm:418> INFO - Reading 'mastersThesisDraft.bcf'
-[247] Biber.pm:975> INFO - Using all citekeys in bib section 0
-[264] Biber.pm:4401> INFO - Processing section 0
-[280] Biber.pm:4592> INFO - Looking for bibtex file 'bib.bib' for section 0
-[282] bibtex.pm:1713> INFO - LaTeX decoding ...
-[299] bibtex.pm:1518> INFO - Found BibTeX data source 'bib.bib'
-[441] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[441] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[441] Biber.pm:4221> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
-[442] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
-[462] bbl.pm:654> INFO - Writing 'mastersThesisDraft.bbl' with encoding 'UTF-8'
-[473] bbl.pm:757> INFO - Output to mastersThesisDraft.bbl
+[108] biber:340> INFO - === Sat May 13, 2023, 16:15:18
+[127] Biber.pm:418> INFO - Reading 'mastersThesisDraft.bcf'
+[231] Biber.pm:975> INFO - Using all citekeys in bib section 0
+[248] Biber.pm:4401> INFO - Processing section 0
+[264] Biber.pm:4592> INFO - Looking for bibtex file 'bib.bib' for section 0
+[266] bibtex.pm:1713> INFO - LaTeX decoding ...
+[281] bibtex.pm:1518> INFO - Found BibTeX data source 'bib.bib'
+[526] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[526] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[526] Biber.pm:4221> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
+[526] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
+[548] bbl.pm:654> INFO - Writing 'mastersThesisDraft.bbl' with encoding 'UTF-8'
+[560] bbl.pm:757> INFO - Output to mastersThesisDraft.bbl

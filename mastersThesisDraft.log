@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.5.9)  13 MAY 2023 09:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.5.9)  13 MAY 2023 16:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -930,24 +930,24 @@ Package csquotes Info: ... none found.
 (./factorizationForHpFunctions.aux))
 \openout1 = `mastersThesisDraft.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 256.
-LaTeX Font Info:    ... okay on input line 256.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 256.
-LaTeX Font Info:    ... okay on input line 256.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 256.
-LaTeX Font Info:    ... okay on input line 256.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 256.
-LaTeX Font Info:    ... okay on input line 256.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 256.
-LaTeX Font Info:    ... okay on input line 256.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 256.
-LaTeX Font Info:    ... okay on input line 256.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 256.
-LaTeX Font Info:    ... okay on input line 256.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 256.
-LaTeX Font Info:    ... okay on input line 256.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 256.
-LaTeX Font Info:    ... okay on input line 256.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 257.
+LaTeX Font Info:    ... okay on input line 257.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 257.
+LaTeX Font Info:    ... okay on input line 257.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 257.
+LaTeX Font Info:    ... okay on input line 257.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 257.
+LaTeX Font Info:    ... okay on input line 257.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 257.
+LaTeX Font Info:    ... okay on input line 257.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 257.
+LaTeX Font Info:    ... okay on input line 257.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 257.
+LaTeX Font Info:    ... okay on input line 257.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 257.
+LaTeX Font Info:    ... okay on input line 257.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 257.
+LaTeX Font Info:    ... okay on input line 257.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -983,7 +983,7 @@ LaTeX Font Info:    ... okay on input line 256.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 256.
+Package hyperref Info: Link coloring OFF on input line 257.
 (./mastersThesisDraft.out) (./mastersThesisDraft.out)
 \@outlinefile=\write5
 \openout5 = `mastersThesisDraft.out'.
@@ -1026,9 +1026,31 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'mastersThesisDraft.bbl' found.
 
 (./mastersThesisDraft.bbl)
-Package biblatex Info: Reference section=0 on input line 256.
-Package biblatex Info: Reference segment=0 on input line 256.
+Package biblatex Info: Reference section=0 on input line 257.
+Package biblatex Info: Reference segment=0 on input line 257.
  (./01_TitlePage.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 11
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
+1.
+
+(/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 <Images/Logos/iiser_logo.png, id=75, 1284.8pt x 755.82375pt>
 File: Images/Logos/iiser_logo.png Graphic file (type png)
 <use Images/Logos/iiser_logo.png>
@@ -1042,7 +1064,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.259 \shipout\null
+l.260 \shipout\null
                     [1] (./02_Declaration.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
@@ -1056,27 +1078,7 @@ l.20 \clearpage
 ]) (./04_Acknowledgements.tex
 [3
 
-]) (./06_ToC,LoF,LoT.tex (./mastersThesisDraft.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 2.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 2
-.
-
-(/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd))
+]) (./06_ToC,LoF,LoT.tex (./mastersThesisDraft.toc)
 \tf@toc=\write6
 \openout6 = `mastersThesisDraft.toc'.
 
@@ -1166,7 +1168,7 @@ Overfull \hbox (5.7709pt too wide) in paragraph at lines 336--337
 
 [45] [46] [47] [48]) [49]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
-75.
+76.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
@@ -1175,7 +1177,7 @@ File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 
 
 ]
-Overfull \hbox (5.11438pt too wide) in paragraph at lines 275--275
+Overfull \hbox (5.11438pt too wide) in paragraph at lines 276--276
 []\T1/cmr/m/n/12 Bryan Rynne and Mar-tin A Young-son. \T1/cmr/m/it/12 Lin-ear f
 unc-tional anal-y-sis\T1/cmr/m/n/12 . Springer
  []
@@ -1189,13 +1191,13 @@ Package logreq Info: Writing requests to 'mastersThesisDraft.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31520 strings out of 476091
- 604639 string characters out of 5794082
+ 31521 strings out of 476091
+ 604643 string characters out of 5794082
  1866330 words of memory out of 5000000
- 51193 multiletter control sequences out of 15000+600000
+ 51194 multiletter control sequences out of 15000+600000
  539893 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,19n,104p,1241b,1520s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,19n,104p,1236b,1520s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
 , replaced by a fixed one
@@ -1240,7 +1242,7 @@ s/type1/public/cm-super/sfti1440.pfb></usr/share/texmf/fonts/type1/public/cm-su
 per/sftt1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stm
 ary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary8.pf
 b>
-Output written on mastersThesisDraft.pdf (57 pages, 629622 bytes).
+Output written on mastersThesisDraft.pdf (57 pages, 628329 bytes).
 PDF statistics:
  706 PDF objects out of 1000 (max. 8388607)
  578 compressed objects within 6 object streams
